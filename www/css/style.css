@@ -1,1 +1,64 @@
 /* Empty. Add your own CSS if you like */
+body, .pane, .view{
+    background:black;
+    color:white;
+}
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    color:white;
+}
+.start-tab{
+    height:50vh;
+    display: flex;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    align-items: center;
+    font-size:3em;
+    text-align: center;
+    justify-content: center;
+}
+.start-tab i {
+    padding-left:10px;
+}
+.ent-menu{
+    height:45px;
+    line-height:45px;
+    padding-left:20px;
+}
+.menu-ls{
+    padding-right:50px;
+    font-size:1.3em;
+    color:#999;
+}
+.menu-ls.menu-active{
+    color:white;
+    text-decoration: underline;
+}
+.ent-pane{
+    height:calc(50vh - 45px);
+    padding-top:40px;
+    width: -webkit-max-content;
+    width:max-content;
+    white-space: nowrap;
+}
+
+.scroll {
+    width:auto !important;
+    min-width: 100% !important;
+}
+.ent-list,.first-letter,.word-list{
+    float:left;
+}
+.ent-list{
+    margin-right:50px;
+    height:100%;
+}
+.first-letter{
+    font-size: 4em;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding-right:20px;
+    padding-left:20px;
+}
+.word{
+    color:#999;
+}

@@ -1,0 +1,28 @@
+<ion-view title="create">
+    <ion-content class="scrollable" padding="true">
+      <div class="ent-menu">
+          <span on-tap="tab='themes'" ng-class="{'menu-active':tab == 'themes'}" class="menu-ls">THEMES</span>
+          <span on-tap="tab='speakers'" ng-class="{'menu-active':tab == 'speakers'}" class="menu-ls">SPEAKERS</span>
+          <span on-tap="tab='places'" ng-class="{'menu-active':tab == 'places'}" class="menu-ls">PLACES</span>
+      </div>
+
+      <ion-scroll direction="x">
+        <div class="ent-pane">
+          <div ng-show="tab=='themes'" class="ent-list" ng-repeat="t in keys(themes)">
+              <div class="first-letter">{{t}}</div>
+              <div class="word-list">
+                <div ng-repeat="w in themes[t] track by $index" class="word">{{w}}</div>
+              </div>
+          </div>
+
+            <div ng-show="tab=='speakers'" class="ent-list" ng-repeat="t in keys(speakers)">
+                <div class="first-letter">{{t}}</div>
+                <div class="word-list">
+                    <div ng-repeat="w in speakers[t] track by $index" class="word">{{w}}</div>
+                </div>
+            </div>
+        </div>
+      </ion-scroll>
+
+    </ion-content>
+</ion-view>
