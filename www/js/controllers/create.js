@@ -1,7 +1,25 @@
-app.controller('CreateCtrl', function($scope) {
+app.controller('CreateCtrl', function($scope,apiService,$window,$ionicScrollDelegate, $location) {
     $scope.tab = 'themes';
     //socket.emit('changeView',{view:"create"});
 
+    $scope.themes={};
+    $scope.speakers={};
+    $scope.chunks = [];
+    $scope.selectedThemes = [];
+    $scope.selectedSpekers = [];
+
+    $scope.addEntity = function(ent,type) {
+        ent.selected = true;
+        if(type=="theme") {
+            $scope.selectedThemes.push(ent);
+        }
+        else if(type == "speaker") {
+            $scope.selectedSpekers.push(ent);
+        }
+        apiService.getFile("data/tag-"+Math.ceil(Math.random()*4)+".json").then(function(data){
+            $scope.chunks = _.uniq(_.union($scope.chunks,data.chunks),'chunkId');
+        })
+    }
 
     var rawthemes=[
         "in",
@@ -104,8 +122,6 @@ app.controller('CreateCtrl', function($scope) {
         "Bass Solis"
     ];
 
-    $scope.themes={};
-    $scope.speakers={};
 
     $scope.keys = function(obj){
         var res =  obj? Object.keys(obj) : [];
@@ -124,16 +140,49 @@ app.controller('CreateCtrl', function($scope) {
                 init = d.charAt(0);
             }
             if(init in container) {
-                container[init].push(d);
+                container[init].push({name:d,selected:false});
             }
             else {
-                container[init] = [d];
+                container[init] = [{name:d,selected:false}];
             }
         })
-        console.log(container);
     }
 
     findInitials(rawthemes, false, $scope.themes);
     findInitials(rawspeakers, true, $scope.speakers);
+
+
+    $scope.selectVideo = function(vid) {
+       var left = angular.element(document.getElementById(vid.chunkId)).prop('offsetLeft');
+        var w = angular.element(document.getElementById(vid.chunkId)).prop('clientWidth');
+
+        console.log(left,w);
+
+       $scope.chunks.forEach(function(d,i){
+           d.selected = false;
+       });
+        vid.selected = true;
+        $location.hash(vid.chunkId);
+        $ionicScrollDelegate.$getByHandle('chunks').scrollTo(left-$window.innerWidth/2+w/2,0,true);
+    }
+
+    $scope.isSelected = function(vid) {
+        return vid.selected;
+    }
+
+    $scope.swapVideo = function(position, $index,id) {
+        if(position==1 || position == -1) {
+            var b = $scope.chunks[$index+position];
+            $scope.chunks[$index+position] = $scope.chunks[$index];
+            $scope.chunks[$index] = b;
+        }
+
+        var left = angular.element(document.getElementById(id)).prop('offsetLeft');
+        var w = angular.element(document.getElementById(id)).prop('clientWidth');
+        $ionicScrollDelegate.$getByHandle('chunks').scrollTo(left-$window.innerWidth/2+w/2,0,true);
+    }
+
+
+
 
 })
