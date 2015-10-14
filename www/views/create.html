@@ -5,46 +5,77 @@
           <span on-tap="tab='speakers'" ng-class="{'menu-active':tab == 'speakers'}" class="menu-ls">SPEAKERS</span>
           <span on-tap="tab='places'" ng-class="{'menu-active':tab == 'places'}" class="menu-ls">PLACES</span>
       </div>
+      <div class="ent-rightmenu">
+          <div>reset</div>
+          <div ng-click="goBack()">back</div>
+      </div>
+
 
       <ion-scroll direction="x" scrollbar-x="false">
-        <div class="ent-pane">
+
+          <div class="ent-pane">
           <div ng-show="tab=='themes'" class="ent-list" ng-repeat="t in keys(themes)">
               <div class="first-letter">{{t}}</div>
               <div class="word-list">
-                <div ng-class="{'tag-sel':w.selected}" on-tap="addEntity(w,'theme')" ng-repeat="w in themes[t] track by $index" class="word"><i ng-show="w.selected" class="ion-close"> </i> {{w.name}}</div>
+                <div ng-class="{'tag-sel':w.selected}" on-tap="addEntity(w,'theme')" ng-repeat="w in themes[t] track by $index" class="word"><i ng-show="w.selected" class="ion-close-circled"> </i> {{w.name}}</div>
               </div>
           </div>
 
             <div ng-show="tab=='speakers'" class="ent-list" ng-repeat="t in keys(speakers)">
                 <div class="first-letter">{{t}}</div>
                 <div class="word-list">
-                    <div ng-class="{'tag-sel':w.selected}" on-tap="addEntity(w,'speaker')" ng-repeat="w in speakers[t] track by $index" class="word"><i ng-show="w.selected" class="ion-close"> </i> {{w.name}}</div>
+                    <div ng-class="{'tag-sel':w.selected}" on-tap="addEntity(w,'speaker')" ng-repeat="w in speakers[t] track by $index" class="word"><i ng-show="w.selected" class="ion-close-circled"> </i> {{w.name}}</div>
+                </div>
+            </div>
+
+            <div ng-show="tab=='places'" class="ent-list" ng-repeat="t in keys(places)">
+                <div class="first-letter">{{t}}</div>
+                <div class="word-list">
+                    <div ng-class="{'tag-sel':w.selected}" on-tap="addEntity(w,'place')" ng-repeat="w in places[t] track by $index" class="word"><i ng-show="w.selected" class="ion-close-circled"> </i> {{w.name}}</div>
                 </div>
             </div>
         </div>
       </ion-scroll>
 
         <ion-scroll class="chunk-scroll" scrollbar-x="false" direction="x" delegate-handle="chunks">
+            <div class="help-3-cont" ng-show="!chunks.length">
+                <div class="help-3-ar"><i class="ion-android-arrow-up"></i></div>
+                <div class="help-3-txt">Select a maximum of 3 topics among themes, speakers or places to create a new video</div>
+            </div>
             <div class="chunk-pane">
+
               <!--  <div on-tap="selectVideo(c)" collection-repeat="c in chunks" item-wisth="640" item-height="100%" class="chunk">-->
-                <div on-tap="selectVideo(c)" ng-repeat="c in chunks"  id="{{c.chunkId}}" class="chunk">
-                    <div ng-class="{'selected-chunk':c.selected}" class="chunk-main" ng-style="{'background-image':'url('+c.picture+')'}">
-                        <div ng-show="c.selected" class="chunk-control">
-                            <div class="chunk-duration">{{c.duration | dateFilter}}</div>
-                            <div class="chunk-remove">
-                                <i on-tap="swapVideo(-1,$index,c.chunkId)" ng-show="!$first" class="ion-arrow-left-b" > </i>
-                                <i on-tap="chunks.splice($index,1)" class="ion-ios-close-outline"></i>
-                                <i on-tap="swapVideo(1,$index,c.chunkId)" ng-show="!$last" class="ion-arrow-right-b" > </i>
+                <div ng-repeat="c in chunks"  id="{{c.chunkId}}" class="chunk">
+                    <div ng-class="{'selected-chunk':selectedChunk==c.chunkId,'blurred-chunk':selectedChunk!=c.chunkId && selectedChunk!=''}" class="chunk-main" ng-style="{'background-image':'url('+c.picture+')'}">
+                        <div class="chunk-control">
+                           <!-- <div class="chunk-duration">{{c.duration | dateFilter}}</div> -->
+                            <div class="chunk-title" ng-style="{'margin':c.selected?'0px auto'  : '0px 0px 0px 10px'}"><span>{{c.speakers[0].name}}</span></div>
+                            <div ng-show="selectedChunk==c.chunkId" class="chunk-move">
+
+                                <i on-tap="swapVideo(-1,$index,c.chunkId)" ng-style="{'opacity':$first ? 0 : 1}" class="ion-ios-skipbackward" > </i>
+                                <i on-tap="swapVideo(-1,$index,c.chunkId)" ng-style="{'opacity':$first ? 0 : 1}" class="ion-arrow-left-b" > </i>
+                                <i></i>
+                                <i on-tap="swapVideo(1,$index,c.chunkId)" ng-style="{'opacity':$last ? 0 : 1}" class="ion-arrow-right-b" > </i>
+                                <i on-tap="swapVideo(1,$index,c.chunkId)" ng-style="{'opacity':$last ? 0 : 1}" class="ion-ios-skipforward" > </i>
+
+
                             </div>
+
+
+                            <div ng-click="selectVideo(c)" ng-hide="selectedChunk==c.chunkId" class="chunk-play"><span>edit</span></div>
+
+
+                                <div ng-show="selectedChunk==c.chunkId" class="chunk-play"><span>view info</span><span on-tap="chunks.splice($index,1)">remove from playlist</span></div>
+
                         </div>
 
-                        <div ng-show="c.selected" class="chunk-play"><div>PLAY VIDEO</div></div>
 
-                        <div class="chunk-meta">
-                            <div class="chunk-title">{{c.speakers[0].name}}</div>
+
+                            <!--
                             <div class="chunk-themes"><b>Themes:</b> <span ng-repeat="th in c.themes">{{th.name}}{{$last ? '' : ', '}}</span></div>
                             <div class="chunk-places"><b>Places:</b> <span ng-repeat="pl in c.places">{{pl.name}}{{$last ? '' : ', '}}</span></div>
-                        </div>
+                            -->
+
                     </div>
 
                 </div>

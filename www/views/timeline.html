@@ -6,9 +6,7 @@
 
         <div class="timeline">
             <div class="timeline-chunks">
-            <div class="timeline-chunk" on-tap="selectVideo(c)" ng-class="{'selected':c.selected}" ng-repeat="c in chunks" ng-style="{'width':(c.duration/totalTime)*100+'%'}"></div>
-            </div>
-            <div class="timeline-line">
+            <div class="timeline-chunk" on-tap="selectVideo(c)" ng-repeat="c in chunks" ng-style="{'width':(c.duration/totalTime)*100+'%'}"><span ng-class="{'selected':selectedChunk==c.chunkId}"> </span></div>
             </div>
         </div>
     </div>
