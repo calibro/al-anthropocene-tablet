@@ -1,6 +1,6 @@
-app.controller('CreateCtrl', function($scope,apiService,$timeout,$window,$ionicHistory,$ionicScrollDelegate, $location) {
+app.controller('CreateCtrl', function($scope,apiService,$timeout,$window,$ionicHistory,$ionicScrollDelegate, socket,$location) {
     $scope.tab = 'themes';
-    //socket.emit('changeView',{view:"create"});
+    socket.emit('changeView',{view:"create"});
 
     $scope.themes={};
     $scope.speakers={};
@@ -9,7 +9,7 @@ app.controller('CreateCtrl', function($scope,apiService,$timeout,$window,$ionicH
     $scope.selectedThemes = [];
     $scope.selectedSpekers = [];
     $scope.selectedChunk = "";
-
+    $scope.entities = [];
     $scope.goBack = function() {
         $ionicHistory.goBack();
     };
@@ -27,13 +27,21 @@ app.controller('CreateCtrl', function($scope,apiService,$timeout,$window,$ionicH
         ent.selected = true;
         if(type=="theme") {
             $scope.selectedThemes.push(ent);
+            $scope.entities.push(ent.id);
         }
         else if(type == "speaker") {
             $scope.selectedSpekers.push(ent);
+            $scope.entities.push(ent.id);
+        }
+        else if(type == "place") {
+            $scope.selectedPlaces.push(ent);
+            $scope.entities.push(ent.id);
         }
         apiService.getFile("data/tag-"+Math.ceil(Math.random()*4)+".json").then(function(data){
             $scope.chunks = _.uniq(_.union($scope.chunks,data.chunks),'chunkId');
         })
+
+        socket.emit('entities',{entities:$scope.entities});
     }
 
     $scope.keys = function(obj){
@@ -76,8 +84,6 @@ app.controller('CreateCtrl', function($scope,apiService,$timeout,$window,$ionicH
     }
 
     $scope.swapVideo = function(position, $index,id) {
-
-
         if(position==1 || position == -1) {
             var b = $scope.chunks[$index+position];
             $scope.chunks[$index+position] = $scope.chunks[$index];
@@ -89,10 +95,5 @@ app.controller('CreateCtrl', function($scope,apiService,$timeout,$window,$ionicH
             console.log(id,left,w);
             $ionicScrollDelegate.$getByHandle('chunks').scrollTo(left-$window.innerWidth/2+w/2,0,true);
         });
-
     }
-
-
-
-
 })
