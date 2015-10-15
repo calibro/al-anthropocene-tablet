@@ -1,4 +1,4 @@
-app.controller('CreateCtrl', function($scope,apiService,$timeout,$window,$ionicHistory,$ionicScrollDelegate, socket,$location) {
+app.controller('CreateCtrl', function($scope,apiService,$timeout,$window,$ionicHistory,$ionicScrollDelegate,$state,socket,$location) {
     $scope.tab = 'themes';
     socket.emit('changeView',{view:"create"});
 
@@ -7,7 +7,8 @@ app.controller('CreateCtrl', function($scope,apiService,$timeout,$window,$ionicH
     $scope.places={};
     $scope.chunks = [];
     $scope.selectedThemes = [];
-    $scope.selectedSpekers = [];
+    $scope.selectedSpeakers = [];
+    $scope.selectedPlaces = [];
     $scope.selectedChunk = "";
     $scope.selEntities = [];
 
@@ -31,15 +32,16 @@ app.controller('CreateCtrl', function($scope,apiService,$timeout,$window,$ionicH
             $scope.selEntities.push(ent.id);
         }
         else if(type == "speaker") {
-            $scope.selectedSpekers.push(ent);
+            $scope.selectedSpeakers.push(ent);
             $scope.selEntities.push(ent.id);
         }
         else if(type == "place") {
             $scope.selectedPlaces.push(ent);
             $scope.selEntities.push(ent.id);
         }
-        apiService.getFile("data/tag-"+Math.ceil(Math.random()*4)+".json").then(function(data){
-            $scope.chunks = _.uniq(_.union($scope.chunks,data.chunks),'chunkId');
+        apiService.getEntity(ent.id).then(function(data){
+            console.log(data);
+            $scope.chunks = _.uniq(_.union($scope.chunks,data.chunks),'id');
         })
 
         socket.emit('entities',{entities:$scope.selEntities});
@@ -62,21 +64,23 @@ app.controller('CreateCtrl', function($scope,apiService,$timeout,$window,$ionicH
                 init = d.name.charAt(0);
             }
             if(init in container) {
-                container[init].push({id: d.id,name: d.name,selected:false});
+                container[init].push({id: d.id, name: d.name,selected:false});
             }
             else {
-                container[init] = [{id: d.id,name: d.name,selected:false}];
+                container[init] = [{id: d.id, name: d.name,selected:false}];
             }
         })
     }
 
-
+ $scope.gotoPreview = function(id) {
+    $state.go('chunk', {"chunkId": id});
+  };
 
     $scope.selectVideo = function(vid) {
-       var left = angular.element(document.getElementById(vid.chunkId)).prop('offsetLeft');
-        var w = angular.element(document.getElementById(vid.chunkId)).prop('clientWidth');
+       var left = angular.element(document.getElementById(vid.id)).prop('offsetLeft');
+        var w = angular.element(document.getElementById(vid.id)).prop('clientWidth');
 
-       $scope.selectedChunk = vid.chunkId;
+       $scope.selectedChunk = vid.id;
         $ionicScrollDelegate.$getByHandle('chunks').scrollTo(left-$window.innerWidth/2+w/2,0,true);
     }
 

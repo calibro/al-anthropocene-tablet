@@ -1,4 +1,13 @@
 /* Empty. Add your own CSS if you like */
+@font-face {
+  font-family: 'graphik';
+  src: url('../fonts/Graphik-Medium-Web.ttf'); /* IE9 Compat Modes */
+}
+
+*{
+  font-family:'graphik';
+}
+
 body, .pane, .view{
     background:black;
     color:white;
@@ -89,7 +98,6 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 }
 .first-letter{
     font-size: 4em;
-    font-weight: bold;
     text-transform: uppercase;
     padding-right:20px;
     padding-left:20px;
@@ -115,8 +123,8 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     padding:2px 5px;
 }
 .chunk{
-    width:640px;
-    max-width:640px;
+    width:480px;
+    max-width:480px;
     float:left;
     height:100%;
     margin:0 5px 0 5px;
@@ -132,14 +140,13 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 .chunk.ng-leave,
 .chunk.ng-enter.ng-enter-active {
     opacity: 1;
-    width: 640px;
+    width: 480px;
 }
 .chunk-duration{
     float:left;
     margin:10px 0 0 10px;
 }
 .chunk-title{
-    font-weight: bold;
     font-size: 1.5em;
     padding-top:10px;
     text-align:left;
@@ -173,7 +180,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     margin:0 0px 0 0px;
     top:3%;
     height:100%;
-    width:640px;
+    width:480px;
     z-index:2;
 }
 .blurred-chunk{
@@ -251,7 +258,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     opacity:1;
 }
 .timeline-chunk span.selected{
-    background-color:#aaa;
+    background-color:#fff;
 }
 .timeline-chunks{
     position:absolute;
@@ -307,9 +314,10 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     text-align:center;
     font-size:3em;
     margin-bottom:-100px;
+    height: 100px;
 }
 .chunk-move i {
-    display:inline-blcok;
+    display:inline-block;
     margin:0 36px;
     height:100px;
 
@@ -327,6 +335,22 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     height:100px;
     margin-bottom:-100px;
 }
+.menu-ls sup{
+  text-decoration: none;
+  text-align: center;
+  padding-top: 7px;
+  font-size: 0.6em;
+  height: 12px;
+  width: 12px;
+  display: inline-block;
+  background-color: white;
+  color: black;
+  border-radius: 100%;
+  position:relative;
+  top:-6px;
+  left:3px;
+}
+
 
 
 /*

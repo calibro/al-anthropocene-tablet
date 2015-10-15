@@ -1,9 +1,9 @@
 <ion-view title="create">
     <ion-content class="scrollable" padding="true">
       <div class="ent-menu">
-          <span on-tap="tab='themes'" ng-class="{'menu-active':tab == 'themes'}" class="menu-ls">THEMES</span>
-          <span on-tap="tab='speakers'" ng-class="{'menu-active':tab == 'speakers'}" class="menu-ls">SPEAKERS</span>
-          <span on-tap="tab='places'" ng-class="{'menu-active':tab == 'places'}" class="menu-ls">PLACES</span>
+          <span on-tap="tab='themes'" ng-class="{'menu-active':tab == 'themes'}" class="menu-ls">THEMES<sup ng-show="selectedThemes.length">{{selectedThemes.length}}</sup></span>
+          <span on-tap="tab='speakers'" ng-class="{'menu-active':tab == 'speakers'}" class="menu-ls">SPEAKERS<sup ng-show="selectedSpeakers.length">{{selectedSpeakers.length}}</sup></span>
+          <span on-tap="tab='places'" ng-class="{'menu-active':tab == 'places'}" class="menu-ls">PLACES<sup ng-show="selectedPlaces.length">{{selectedPlaces.length}}</sup></span>
       </div>
       <div class="ent-rightmenu">
           <div>reset</div>
@@ -45,27 +45,32 @@
             <div class="chunk-pane">
 
               <!--  <div on-tap="selectVideo(c)" collection-repeat="c in chunks" item-wisth="640" item-height="100%" class="chunk">-->
-                <div ng-repeat="c in chunks"  id="{{c.chunkId}}" class="chunk">
-                    <div ng-class="{'selected-chunk':selectedChunk==c.chunkId,'blurred-chunk':selectedChunk!=c.chunkId && selectedChunk!=''}" class="chunk-main" ng-style="{'background-image':'url('+c.picture+')'}">
+                <div ng-repeat="c in chunks"  id="{{c.id}}" class="chunk">
+                    <div ng-class="{'selected-chunk':selectedChunk==c.id,'blurred-chunk':selectedChunk!=c.id && selectedChunk!=''}" class="chunk-main" ng-style="{'background-image':'url('+c.picture+')'}">
                         <div class="chunk-control">
                            <!-- <div class="chunk-duration">{{c.duration | dateFilter}}</div> -->
-                            <div class="chunk-title" ng-style="{'margin':c.selected?'0px auto'  : '0px 0px 0px 10px'}"><span>{{c.speakers[0].name}}</span></div>
-                            <div ng-show="selectedChunk==c.chunkId" class="chunk-move">
+                            <div class="chunk-title" ng-style="{'margin':c.selected?'0px auto'  : '0px 0px 0px 10px'}"><span>{{c.speakers[0].name.split(",")[0]}}</span></div>
+                            <div ng-show="selectedChunk==c.id" class="chunk-move">
 
-                                <i on-tap="swapVideo(-1,$index,c.chunkId)" ng-style="{'opacity':$first ? 0 : 1}" class="ion-ios-skipbackward" > </i>
-                                <i on-tap="swapVideo(-1,$index,c.chunkId)" ng-style="{'opacity':$first ? 0 : 1}" class="ion-arrow-left-b" > </i>
+                                <i on-tap="swapVideo(-1,$index,c.id)" ng-style="{'opacity':$first ? 0 : 1}" class="ion-ios-skipbackward" > </i>
+                                <i on-tap="swapVideo(-1,$index,c.idd)" ng-style="{'opacity':$first ? 0 : 1}" class="ion-arrow-left-b" > </i>
                                 <i></i>
-                                <i on-tap="swapVideo(1,$index,c.chunkId)" ng-style="{'opacity':$last ? 0 : 1}" class="ion-arrow-right-b" > </i>
-                                <i on-tap="swapVideo(1,$index,c.chunkId)" ng-style="{'opacity':$last ? 0 : 1}" class="ion-ios-skipforward" > </i>
+                                <i on-tap="swapVideo(1,$index,c.id)" ng-style="{'opacity':$last ? 0 : 1}" class="ion-arrow-right-b" > </i>
+                                <i on-tap="swapVideo(1,$index,c.id)" ng-style="{'opacity':$last ? 0 : 1}" class="ion-ios-skipforward" > </i>
 
 
                             </div>
 
 
-                            <div ng-click="selectVideo(c)" ng-hide="selectedChunk==c.chunkId" class="chunk-play"><span>edit</span></div>
+                            <div ng-click="selectVideo(c)" ng-hide="selectedChunk==c.id" class="chunk-play">
+                              <span>edit</span>
+                            </div>
 
 
-                                <div ng-show="selectedChunk==c.chunkId" class="chunk-play"><span>view info</span><span on-tap="chunks.splice($index,1)">remove from playlist</span></div>
+                                <div ng-show="selectedChunk==c.id" class="chunk-play">
+                                  <span on-tap="gotoPreview(c.id)">view info</span>
+                                  <span on-tap="chunks.splice($index,1)">remove from playlist</span>
+                                </div>
 
                         </div>
 

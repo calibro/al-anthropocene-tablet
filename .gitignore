@@ -5,6 +5,7 @@ plugins/
 .idea
 www/videos/
 www/thumbs/
+projectFiles*/
 .sass-cache
 <%= appPath %>/bower_components
 platforms
