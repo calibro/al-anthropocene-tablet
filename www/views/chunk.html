@@ -1,0 +1,49 @@
+<div class="main-prev">
+
+
+
+    <div class="prev-content">
+
+        <videogular  vg-width="controller.config.width" vg-height="controller.config.height" vg-auto-play="true" vg-player-ready="controller.onPlayerReady($API)" vg-complete="controller.onCompleteVideo()" vg-theme="controller.config.theme.url">
+            <!--<div class="prev-shade">-->
+            <vg-media vg-src="controller.config.sources">
+            </vg-media>
+
+            <!--<vg-overlay-play></vg-overlay-play>-->
+
+        </videogular>
+
+        <ion-scroll direction="y" class="prev-txt">
+            <div>
+            {{chunk.content}}
+            </div>
+        </ion-scroll>
+
+
+    </div>
+
+    <div class="prev-meta">
+        <div ng-repeat="s in chunk.speakers" class="prev-head">
+            <div class="prev-title">{{s.name.split(",")[0]}}</div>
+            <div class="prev-sub">{{s.name.split(",",2)[1]}}</div>
+        </div>
+        <div class="prev-ntts">
+            <div ng-show="chunk.themes.length" class="prev-thms">
+                <div>
+                    THEMES
+                </div>
+                <span ng-repeat="n in chunk.themes" class="prev-ntt">{{n.name}}{{$last ? '' : ', '}}</span>
+            </div>
+
+            <div ng-show="chunk.places.length" class="prev-plcs">
+                <div>
+                    PLACES
+                </div>
+                <span ng-repeat="n in chunk.places" class="prev-ntt">{{n.name}}{{$last ? '' : ', '}}</span>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+

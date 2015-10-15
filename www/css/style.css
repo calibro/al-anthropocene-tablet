@@ -6,6 +6,10 @@ body, .pane, .view{
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     color:white;
 }
+/*
+* INITIAL PAGE
+*/
+
 .start-tab{
     height:50vh;
     display: flex;
@@ -21,6 +25,11 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     padding:2% 6%;
     border:2px solid white;
 }
+
+/*
+* CREATE PAGE
+*/
+
 .ent-menu{
     height:45px;
     line-height:45px;
@@ -317,4 +326,75 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 .help-3-cont{
     height:100px;
     margin-bottom:-100px;
+}
+
+
+/*
+* CHUNK PAGE
+*/
+.prev-content{
+    margin-top:-30px;
+}
+.prev-meta{
+    position:absolute;
+    top:50px;
+    width:80%;
+    left:10%;
+    height:400px;
+    margin:0 auto;
+    margin-top:-30px;
+    padding-top:30px;
+    background-color:rgba(0,0,0,0.4);
+}
+.prev-title{
+    font-size:2.3em;
+}
+.prev-sub{
+    margin-top:10px;
+    margin-bottom:20px;
+}
+.prev-ntts{
+    margin-top:50px;
+}
+.prev-thms, .prev-plcs{
+    width:50%;
+    float:left;
+    padding-right:20px;
+}
+
+.prev-thms div, .prev-plcs div{
+    font-size:0.7em;
+}
+
+.prev-thms span, .prev-plcs span{
+    text-transform: uppercase;
+}
+.videogular-container {
+    width: 100%;
+    height: 320px;
+    margin: auto;
+    overflow: hidden;
+}
+
+videogular vg-media video{
+    width:640px !important;
+    height:480px !important;
+    float:right;
+    margin-right:10%;
+}
+.prev-txt{
+    width:640px;
+    float:right;
+    margin-right:10%;
+    margin-top:-30px;
+    height:400px;
+}
+
+.prev-shade{
+    width:640px;
+    height:480px;
+    background-color:rgba(0,0,0,0.4);
+    position:absolute;
+    top:0;
+    left:0;
 }

@@ -5,7 +5,9 @@
 // the 2nd parameter is an array of 'requires'
 var app = angular.module('starter', [
     'ionic',
-    'btford.socket-io'
+    'btford.socket-io',
+    "com.2fdevs.videogular",
+    "com.2fdevs.videogular.plugins.overlayplay"
 ]);
 
 app.config(function($stateProvider, $urlRouterProvider) {
@@ -24,6 +26,16 @@ app.config(function($stateProvider, $urlRouterProvider) {
         url: '/create',
         templateUrl: 'views/create.html',
         controller: 'CreateCtrl'
+    });
+    $stateProvider.state('chunk', {
+        url: '/chunk/:chunkId',
+        templateUrl: 'views/chunk.html',
+        controller: 'chunkCtrl',
+        resolve: {
+            chunk: function(apiService,$stateParams) {
+                return apiService.getChunk($stateParams.chunkId);
+            }
+        }
     })
 })
 
