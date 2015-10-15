@@ -148,11 +148,16 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 }
 .chunk-title{
     font-size: 1.5em;
-    padding-top:10px;
-    text-align:left;
+    padding-top: 10px;
+    /* height: 200px; */
+    text-align: left;
     -webkit-transition: all 0.15s linear;
     -moz-transition: all 0.15s linear;
-    width:-webkit-max-content;
+    width: 90%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 35px;
 }
 .chunk-meta{
     font-size:.8em;
@@ -171,6 +176,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 .chunk-main{
     margin:5% 0 0 0;
     position:relative;
+    background-position: center center;
     top:0;
     height:80%;
     -webkit-transition: all 0.15s linear;
@@ -190,24 +196,24 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     overflow: visible !important;
 }
 .play{
-   font-size:30px;
+   font-size:25px;
 }
 .timeline-cont{
     width:100%;
     height:45px;
-    margin-top:40px;
+    margin-top:10px;
 }
 .play-button{
-    text-align:center;
-    width:45px;
-    height:45px;
-    height:100%;
-    padding:6px;
-    border:1px solid white;
-    line-height:100%;
-    text-align:center;
-    float:left;
-    margin-left:15px;
+    text-align: center;
+    width: 35px;
+    height: 45px;
+    height: 35px;
+    /* padding: 6px; */
+    padding-left: 3px;
+    border: 2px solid white;
+    border-radius: 100%;
+    line-height: 28px;
+    margin: -5px auto 0px auto;
 }
 
 .timeline{
@@ -223,8 +229,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     margin: 22px auto 0 auto;
 }
 .timeline-base{
-    float:left;
-    width:calc(100% - 60px);
+    width:calc(100%);
     margin:0 auto;
     height:100%;
     position:relative;
@@ -310,7 +315,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     height:100%;
 }
 .chunk-move{
-    margin-top:50px;
+    margin-top:0px;
     text-align:center;
     font-size:3em;
     margin-bottom:-100px;
@@ -338,7 +343,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 .menu-ls sup{
   text-decoration: none;
   text-align: center;
-  padding-top: 7px;
+  padding-top: 5px;
   font-size: 0.6em;
   height: 12px;
   width: 12px;
@@ -350,8 +355,6 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   top:-6px;
   left:3px;
 }
-
-
 
 /*
 * CHUNK PAGE
@@ -411,7 +414,7 @@ videogular vg-media video{
     float:right;
     margin-right:10%;
     margin-top:-30px;
-    height:400px;
+    height:300px;
 }
 
 .prev-shade{
@@ -421,4 +424,16 @@ videogular vg-media video{
     position:absolute;
     top:0;
     left:0;
+}
+.prev-close{
+    display: block;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    line-height: 20px;
+    border: 2px solid white;
+    position: absolute;
+    right: -40px;
+    top: 10px;
+    border-radius: 100%;
 }

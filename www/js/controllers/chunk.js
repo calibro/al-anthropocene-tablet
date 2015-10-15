@@ -1,4 +1,4 @@
-app.controller('chunkCtrl', function($scope,$state,chunk,$sce,$timeout,$interval, mediaService) {
+app.controller('chunkCtrl', function($scope,$state,chunk,$sce,$timeout,$interval, mediaService,$ionicHistory) {
     //socket.emit('changeView',{view:"home"});
     $scope.chunk = chunk;
 
@@ -25,6 +25,10 @@ app.controller('chunkCtrl', function($scope,$state,chunk,$sce,$timeout,$interval
         },1000);
 
 
+    };
+
+    $scope.goBack = function() {
+        $ionicHistory.goBack();
     };
 
     $scope.controller.onCompleteVideo = function() {

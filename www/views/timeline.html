@@ -1,13 +1,12 @@
 <div class="timeline-cont">
-    <div class="play-button">
-        <i class="ion-ios-play play"></i>
-    </div>
     <div class="timeline-base">
-
         <div class="timeline">
             <div class="timeline-chunks">
             <div class="timeline-chunk" on-tap="selectVideo(c)" ng-repeat="c in chunks" ng-style="{'width':(c.duration/totalTime)*100+'%'}"><span ng-class="{'selected':selectedChunk==c.id}"> </span></div>
             </div>
         </div>
+    </div>
+    <div class="play-button">
+        <i class="ion-ios-play play"></i>
     </div>
 </div>

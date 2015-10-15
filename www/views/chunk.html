@@ -23,6 +23,7 @@
     </div>
 
     <div class="prev-meta">
+       <div class="prev-close"><i on-tap="goBack()" class="ion-close"></i></div>
         <div ng-repeat="s in chunk.speakers" class="prev-head">
             <div class="prev-title">{{s.name.split(",")[0]}}</div>
             <div class="prev-sub">{{s.name.split(",",2)[1]}}</div>
