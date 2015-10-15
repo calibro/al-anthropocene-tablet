@@ -9,7 +9,8 @@ app.controller('CreateCtrl', function($scope,apiService,$timeout,$window,$ionicH
     $scope.selectedThemes = [];
     $scope.selectedSpekers = [];
     $scope.selectedChunk = "";
-    $scope.entities = [];
+    $scope.selEntities = [];
+
     $scope.goBack = function() {
         $ionicHistory.goBack();
     };
@@ -27,21 +28,21 @@ app.controller('CreateCtrl', function($scope,apiService,$timeout,$window,$ionicH
         ent.selected = true;
         if(type=="theme") {
             $scope.selectedThemes.push(ent);
-            $scope.entities.push(ent.id);
+            $scope.selEntities.push(ent.id);
         }
         else if(type == "speaker") {
             $scope.selectedSpekers.push(ent);
-            $scope.entities.push(ent.id);
+            $scope.selEntities.push(ent.id);
         }
         else if(type == "place") {
             $scope.selectedPlaces.push(ent);
-            $scope.entities.push(ent.id);
+            $scope.selEntities.push(ent.id);
         }
         apiService.getFile("data/tag-"+Math.ceil(Math.random()*4)+".json").then(function(data){
             $scope.chunks = _.uniq(_.union($scope.chunks,data.chunks),'chunkId');
         })
 
-        socket.emit('entities',{entities:$scope.entities});
+        socket.emit('entities',{entities:$scope.selEntities});
     }
 
     $scope.keys = function(obj){
