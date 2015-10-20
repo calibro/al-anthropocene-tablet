@@ -25,8 +25,6 @@ app.controller('chunkCtrl', function($scope,$state,chunk,$sce,$timeout,$interval
                 },1000);
             }
         },1000);
-
-
     };
 
     $scope.goBack = function() {
