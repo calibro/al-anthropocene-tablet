@@ -7,12 +7,14 @@ app.controller('chunkCtrl', function($scope,$state,chunk,$sce,$timeout,$interval
     $scope.controller.API = null;
     $scope.controller.currentVideo = 0;
 
+  var timeIntvl = null;
+
     $scope.controller.onPlayerReady = function(API) {
         $scope.controller.API = API;
         $scope.controller.API.setVolume(1);
         $scope.controller.API.seekTime(parseInt($scope.chunk.start));
 
-        $interval(function(){
+      timeIntvl = $interval(function(){
 
             console.log($scope.controller.API.currentTime/1000);
             if($scope.controller.API.currentTime/1000 > $scope.chunk.end) {
@@ -28,6 +30,7 @@ app.controller('chunkCtrl', function($scope,$state,chunk,$sce,$timeout,$interval
     };
 
     $scope.goBack = function() {
+        $interval.cancel(timeIntvl);
         $ionicHistory.goBack();
     };
 
