@@ -1,4 +1,4 @@
-app.controller('CreateCtrl', function($scope,apiService,mediaService,$timeout,$window,$ionicHistory,$ionicScrollDelegate,$state,socket,$location) {
+app.controller('CreateCtrl', function($scope,apiService,mediaService,playlistService,$timeout,$window,$ionicHistory,$ionicScrollDelegate,$state,socket) {
 
     $scope.tab = 'themes';
     socket.emit('changeView',{view:"create"});
@@ -115,6 +115,12 @@ app.controller('CreateCtrl', function($scope,apiService,mediaService,$timeout,$w
     };
 
 
+    $scope.play = function() {
+        socket.emit("play",$scope.chunks);
+        playlistService.setPlaylist($scope.chunks);
+        $state.go('play');
+    };
+
     $scope.reset = function() {
         $scope.chunks = [];
         $scope.selEntities = [];
@@ -125,12 +131,11 @@ app.controller('CreateCtrl', function($scope,apiService,mediaService,$timeout,$w
         findInitials($scope.entities.speakers, true, $scope.speakers);
         findInitials($scope.entities.places, true, $scope.places);
 
-    }
+    };
 
     function addEntity(ent){
 
         ent.selected = true;
-
         apiService.getEntity(ent.id).then(function(data){
             $scope.selEntities.push(data);
             $scope.chunks = _.uniq(_.union($scope.chunks,data.chunks),'id');
@@ -138,9 +143,7 @@ app.controller('CreateCtrl', function($scope,apiService,mediaService,$timeout,$w
     }
 
     function removeEntity(ent) {
-
         ent.selected = false;
-
         var chunksToRemove = _.pluck(_.find($scope.selEntities,'id',ent.id).chunks,'id');
         _.remove($scope.chunks,function(d){return chunksToRemove.indexOf(d.id)>-1;});
         _.remove($scope.selEntities,function(d){return d.id == ent.id });

@@ -437,3 +437,18 @@ videogular vg-media video{
     top: 10px;
     border-radius: 100%;
 }
+.play-meta{
+    width:30%;
+    float:left;
+    height:600px;
+}
+.play-txt{
+    width:60%;
+    float:left;
+    height:600px;
+}
+.play-cont{
+    width:100%;
+    height:100%;
+    padding:25px;
+}

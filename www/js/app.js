@@ -36,6 +36,11 @@ app.config(function($stateProvider, $urlRouterProvider) {
                 return apiService.getChunk($stateParams.chunkId);
             }
         }
+    });
+    $stateProvider.state('play', {
+        url: '/play',
+        templateUrl: 'views/play.html',
+        controller: 'PlayCtrl'
     })
 })
 

@@ -1,0 +1,36 @@
+<div class="play-cont">
+<div class="play-meta">
+    <div ng-repeat="s in currchunk.speakers" class="play-title">
+        {{s.name.split(',')[0]}}
+    </div>
+    <div class="play-subtitle">
+        {{s.name.split(',',2)[1]}}
+    </div>
+
+    <div class="play-ntts">
+        <div ng-show="currchunk.themes.length" class="play-thms">
+            <div>
+                THEMES
+            </div>
+            <span ng-repeat="n in currchunk.themes" class="play-ntt">{{n.name}}{{$last ? '' : ', '}}</span>
+        </div>
+
+        <div ng-show="currchunk.places.length" class="play-plcs">
+            <div>
+                PLACES
+            </div>
+            <span ng-repeat="n in currchunk.places" class="play-ntt">{{n.name}}{{$last ? '' : ', '}}</span>
+        </div>
+    </div>
+
+</div>
+
+<ion-scroll direction="y" class="play-txt">
+    <div>
+        {{currchunk.content}}
+    </div>
+</ion-scroll>
+
+<timeline></timeline>
+
+</div>
