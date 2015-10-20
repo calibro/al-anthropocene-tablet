@@ -2,10 +2,11 @@
 <div class="play-meta">
     <div ng-repeat="s in currchunk.speakers" class="play-title">
         {{s.name.split(',')[0]}}
-    </div>
-    <div class="play-subtitle">
+      <div class="play-sub">
         {{s.name.split(',',2)[1]}}
+      </div>
     </div>
+
 
     <div class="play-ntts">
         <div ng-show="currchunk.themes.length" class="play-thms">
@@ -32,5 +33,23 @@
 </ion-scroll>
 
 <timeline></timeline>
+
+
+  <div class="play-ctrls">
+
+    <div on-tap="prev()" class="play-prev">
+      <i class="ion-ios-skipbackward"></i>
+    </div>
+
+
+  <div on-tap="playOrPause()" class="play-go">
+    <i ng-class="{'ion-ios-play': !play, 'ion-ios-pause':play}" ></i>
+  </div>
+
+    <div on-tap="next()" class="play-next">
+      <i class="ion-ios-skipforward"></i>
+    </div>
+
+  </div>
 
 </div>
