@@ -123,8 +123,8 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     padding:2px 5px;
 }
 .chunk{
-    width:480px;
-    max-width:480px;
+    width:360px;
+    max-width:360px;
     float:left;
     height:100%;
     margin:0 5px 0 5px;
@@ -140,7 +140,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 .chunk.ng-leave,
 .chunk.ng-enter.ng-enter-active {
     opacity: 1;
-    width: 480px;
+    width: 360px;
 }
 .chunk-duration{
     float:left;
@@ -186,7 +186,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     margin:0 0px 0 0px;
     top:3%;
     height:100%;
-    width:480px;
+    width:360px;
     z-index:2;
 }
 .blurred-chunk{
@@ -303,7 +303,8 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     border:1px solid white;
     padding:0px 15px;
     margin:0 5px;
-    width:200px;
+  width: 140px;
+  font-size: 0.8em;
     display:inline-block;
 }
 .chunk-overlay{
@@ -324,7 +325,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 }
 .chunk-move i {
     display:inline-block;
-    margin:0 36px;
+    margin:0 16px;
     height:100px;
 
 }
@@ -482,7 +483,7 @@ videogular vg-media video{
   margin-top:30px;
 }
 .play-ctrls{
-  width:100px;
+  width:130px;
   display:flex;
   flex-direction: row;
   flex-wrap: nowrap;
