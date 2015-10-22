@@ -33,14 +33,14 @@
                 <div>
                     THEMES
                 </div>
-                <span ng-repeat="n in chunk.themes" class="prev-ntt">{{n.name}}{{$last ? '' : ', '}}</span>
+                <span ng-repeat="n in chunk.themes" class="prev-ntt">{{n.name}}{{$last ? '' : ' &middot; '}}</span>
             </div>
 
             <div ng-show="chunk.places.length" class="prev-plcs">
                 <div>
                     PLACES
                 </div>
-                <span ng-repeat="n in chunk.places" class="prev-ntt">{{n.name}}{{$last ? '' : ', '}}</span>
+                <span ng-repeat="n in chunk.places" class="prev-ntt">{{n.name}}{{$last ? '' : ' &middot; '}}</span>
             </div>
         </div>
     </div>

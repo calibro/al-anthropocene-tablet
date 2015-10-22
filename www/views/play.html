@@ -13,14 +13,14 @@
             <div>
                 THEMES
             </div>
-            <span ng-repeat="n in currchunk.themes" class="play-ntt">{{n.name}}{{$last ? '' : ', '}}</span>
+            <span ng-repeat="n in currchunk.themes" class="play-ntt">{{n.name}}{{$last ? '' : ' &middot; '}}</span>
         </div>
 
         <div ng-show="currchunk.places.length" class="play-plcs">
             <div>
                 PLACES
             </div>
-            <span ng-repeat="n in currchunk.places" class="play-ntt">{{n.name}}{{$last ? '' : ', '}}</span>
+            <span ng-repeat="n in currchunk.places" class="play-ntt">{{n.name}}{{$last ? '' : ' &middot; '}}</span>
         </div>
     </div>
 

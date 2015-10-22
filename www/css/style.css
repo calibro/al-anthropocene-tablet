@@ -168,6 +168,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     overflow: hidden;
     text-overflow: ellipsis;
     height: 35px;
+    text-transform: uppercase;
 }
 .chunk-meta{
     font-size:.8em;
@@ -388,6 +389,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 }
 .prev-title{
     font-size:2.3em;
+    text-transform: uppercase;
 }
 .prev-sub{
     margin-top:10px;
@@ -474,6 +476,7 @@ videogular vg-media video{
 .play-title{
   font-size:2em;
   line-height:1em;
+  text-transform: uppercase;
 }
 .play-title:nth-child(n+2){
   margin-top:15px;
@@ -483,6 +486,7 @@ videogular vg-media video{
   font-size:0.5em;
   margin-top:5px;
   line-height:1.2em;
+  text-transform: capitalize;
 }
 .play-thms div,.play-plcs div{
   font-size:0.7em;
