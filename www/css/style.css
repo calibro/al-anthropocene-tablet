@@ -157,16 +157,15 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     margin:10px 0 0 10px;
 }
 .chunk-title{
-    font-size: 1.6em;
+    font-size: 1.2em;
     padding-top: 10px;
     /* height: 200px; */
     text-align: left;
     -webkit-transition: all 0.15s linear;
     -moz-transition: all 0.15s linear;
     width: 90%;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    white-space: normal;
+    overflow: visible;
     height: 35px;
     text-transform: uppercase;
 }
@@ -446,7 +445,7 @@ videogular vg-media video{
     display: block;
     width: 30px;
     height: 30px;
-    padding: 4px; 
+    padding: 4px;
     text-align: center;
     line-height: 20px;
     border: 2px solid white;
@@ -531,4 +530,7 @@ videogular vg-media video{
 
 .play-go .ion-ios-pause{
   font-size: 0.9em;
+}
+.padding{
+  padding: 0px !important;
 }
