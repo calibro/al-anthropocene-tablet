@@ -135,14 +135,20 @@ app.controller('CreateCtrl', function($scope,apiService,mediaService,playlistSer
 
     function addEntity(ent){
 
-        ent.selected = true;
-        apiService.getEntity(ent.id).then(function(data){
+
+        if($scope.selEntities.length<3) {
+
+          ent.selected = true;
+          apiService.getEntity(ent.id).then(function (data) {
             $scope.selEntities.push(data);
-            $scope.chunks = _.uniq(_.union($scope.chunks,data.chunks),'id');
-        });
+            $scope.chunks = _.uniq(_.union($scope.chunks, data.chunks), 'id');
+          });
+        }
+      else $scope.limitReached = true;
     }
 
     function removeEntity(ent) {
+      $scope.limitReached = false;
         ent.selected = false;
         var chunksToRemove = _.pluck(_.find($scope.selEntities,'id',ent.id).chunks,'id');
         _.remove($scope.chunks,function(d){return chunksToRemove.indexOf(d.id)>-1;});
