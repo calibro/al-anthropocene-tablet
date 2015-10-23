@@ -89,5 +89,14 @@
         <div ng-show="chunks.length" on-tap="play()" class="play-button">
             <i class="ion-ios-play play"></i>
         </div>
+
+      <div class="help-limit" ng-show="limitReached">
+
+        You already selected 3 topics.
+        <br/>
+        Play the sequence or remove one of the existing selections.
+
+      </div>
+
     </ion-content>
 </ion-view>

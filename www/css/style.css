@@ -340,11 +340,15 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     height:100px;
 
 }
-.help-3-ar, .help-3-txt{
+.help-3-ar, .help-3-txt, .help-limit{
     width:100%;
     text-align:center;
     font-size:1em;
     color: #dbb550;
+}
+.help-limit{
+  position:fixed;
+  top:49%;
 }
 .help-3-ar{
     font-size:1.4em;
@@ -534,3 +538,4 @@ videogular vg-media video{
 .padding{
   padding: 0px !important;
 }
+.lim
