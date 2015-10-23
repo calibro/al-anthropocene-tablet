@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f3e72048-dd25-4cd0-869c-a029e7128bf0" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config.xml" afterPath="$PROJECT_DIR$/config.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="tablet.iws" />
@@ -26,30 +27,8 @@
       <file leaf-file-name="create.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/views/create.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="90" column="14" selection-start-line="88" selection-start-column="8" selection-end-line="90" selection-end-column="14" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/js/app.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="32" column="6" selection-start-line="32" selection-start-column="6" selection-end-line="32" selection-end-column="6" />
-              <folding>
-                <marker date="1445429882000" expanded="true" signature="1759:1763" placeholder="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="create.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/js/controllers/create.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="83" column="6" selection-start-line="77" selection-start-column="4" selection-end-line="83" selection-end-column="6" />
+            <state vertical-scroll-proportion="-0.0">
+              <caret line="89" column="14" selection-start-line="88" selection-start-column="8" selection-end-line="90" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -85,11 +64,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="306" column="19" selection-start-line="306" selection-start-column="19" selection-end-line="306" selection-end-column="19" />
+            <state vertical-scroll-proportion="-201.6">
+              <caret line="336" column="1" selection-start-line="336" selection-start-column="1" selection-end-line="336" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-7.3469386">
+              <caret line="38" column="50" selection-start-line="38" selection-start-column="50" selection-end-line="38" selection-end-column="50" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="config.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/config.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.42929292">
+              <caret line="18" column="49" selection-start-line="18" selection-start-column="49" selection-end-line="18" selection-end-column="49" />
               <folding />
             </state>
           </provider>
@@ -148,6 +147,7 @@
         <option value="$PROJECT_DIR$/www/views/play.html" />
         <option value="$PROJECT_DIR$/www/js/controllers/play.js" />
         <option value="$PROJECT_DIR$/www/css/style.css" />
+        <option value="$PROJECT_DIR$/config.xml" />
       </list>
     </option>
   </component>
@@ -362,6 +362,170 @@
       <recent name="C:\Users\Cento\Desktop\antropocene\tablet\www\js\filters" />
     </key>
   </component>
+  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
+    <UpdatedFiles>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Updated from server" />
+        <option name="myStatusName" value="Changed on server" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="CHANGED_ON_SERVER" />
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Updated" />
+          <option name="myStatusName" value="Changed" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="UPDATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/config.xml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/hooks/after_prepare/010_add_platform_class.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/package.json</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/www/css/style.css</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/www/js/app.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/www/js/services/socket.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/www/views/chunk.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/www/views/create.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/www/views/play.html</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Created" />
+          <option name="myStatusName" value="Created" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="CREATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/resources/android/icon/drawable-hdpi-icon.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/resources/android/icon/drawable-ldpi-icon.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/resources/android/icon/drawable-mdpi-icon.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/resources/android/icon/drawable-xhdpi-icon.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/resources/android/icon/drawable-xxhdpi-icon.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/resources/android/icon/drawable-xxxhdpi-icon.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/resources/android/splash/drawable-land-hdpi-screen.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/resources/android/splash/drawable-land-ldpi-screen.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/resources/android/splash/drawable-land-mdpi-screen.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/resources/android/splash/drawable-land-xhdpi-screen.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/resources/android/splash/drawable-land-xxhdpi-screen.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/resources/android/splash/drawable-land-xxxhdpi-screen.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/resources/android/splash/drawable-port-hdpi-screen.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/resources/android/splash/drawable-port-ldpi-screen.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/resources/android/splash/drawable-port-mdpi-screen.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/resources/android/splash/drawable-port-xhdpi-screen.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/resources/android/splash/drawable-port-xxhdpi-screen.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/resources/android/splash/drawable-port-xxxhdpi-screen.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/resources/icon.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/resources/ios/icon/icon-40.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/resources/ios/icon/icon-40@2x.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/resources/ios/icon/icon-50.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/resources/ios/icon/icon-50@2x.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/resources/ios/icon/icon-60.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/resources/ios/icon/icon-60@2x.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/resources/ios/icon/icon-60@3x.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/resources/ios/icon/icon-72.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/resources/ios/icon/icon-72@2x.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/resources/ios/icon/icon-76.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/resources/ios/icon/icon-76@2x.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/resources/ios/icon/icon-small.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/resources/ios/icon/icon-small@2x.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/resources/ios/icon/icon-small@3x.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/resources/ios/icon/icon.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/resources/ios/icon/icon@2x.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/resources/ios/splash/Default-568h@2x~iphone.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/resources/ios/splash/Default-667h.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/resources/ios/splash/Default-736h.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/resources/ios/splash/Default-Landscape-736h.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/resources/ios/splash/Default-Landscape@2x~ipad.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/resources/ios/splash/Default-Landscape~ipad.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/resources/ios/splash/Default-Portrait@2x~ipad.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/resources/ios/splash/Default-Portrait~ipad.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/resources/ios/splash/Default@2x~iphone.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/resources/ios/splash/Default~iphone.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/resources/splash.png</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Deleted" />
+          <option name="myStatusName" value="Deleted" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="true" />
+          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Restored" />
+          <option name="myStatusName" value="Will be restored" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="RESTORED" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Modified" />
+        <option name="myStatusName" value="Modified" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MODIFIED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Skipped" />
+        <option name="myStatusName" value="Skipped" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SKIPPED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with conflicts" />
+        <option name="myStatusName" value="Will be merged with conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_CONFLICTS" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with tree conflicts" />
+        <option name="myStatusName" value="Merged with tree conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with property conflicts" />
+        <option name="myStatusName" value="Will be merged with property conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged" />
+        <option name="myStatusName" value="Will be merged" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Not in repository" />
+        <option name="myStatusName" value="Not in repository" />
+        <option name="mySupportsDeletion" value="true" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="UNKNOWN" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally added" />
+        <option name="myStatusName" value="Locally added" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_ADDED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally removed" />
+        <option name="myStatusName" value="Locally removed" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_REMOVED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Switched" />
+        <option name="myStatusName" value="Switched" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SWITCHED" />
+      </FILE-GROUP>
+    </UpdatedFiles>
+  </component>
   <component name="RunManager">
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
       <method />
@@ -475,21 +639,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/www/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="21" column="4" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="72" column="1" selection-start-line="72" selection-start-column="1" selection-end-line="72" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -502,7 +651,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="26" column="6" selection-start-line="26" selection-start-column="6" selection-end-line="26" selection-end-column="6" />
           <folding>
-            <marker date="1445429882000" expanded="true" signature="1759:1763" placeholder="{...}" />
+            <marker date="1445529718000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1445529718000" expanded="true" signature="-1:-1" placeholder="{...}" />
           </folding>
         </state>
       </provider>
@@ -571,7 +721,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="26" column="6" selection-start-line="26" selection-start-column="6" selection-end-line="26" selection-end-column="6" />
           <folding>
-            <marker date="1445429882000" expanded="true" signature="1759:1763" placeholder="{...}" />
+            <marker date="1445529718000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1445529718000" expanded="true" signature="-1:-1" placeholder="{...}" />
           </folding>
         </state>
       </provider>
@@ -640,7 +791,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="26" column="6" selection-start-line="26" selection-start-column="6" selection-end-line="26" selection-end-column="6" />
           <folding>
-            <marker date="1445429882000" expanded="true" signature="1759:1763" placeholder="{...}" />
+            <marker date="1445529718000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1445529718000" expanded="true" signature="-1:-1" placeholder="{...}" />
           </folding>
         </state>
       </provider>
@@ -760,13 +912,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="38" column="50" selection-start-line="38" selection-start-column="50" selection-end-line="38" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/www/js/services/socket.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -786,7 +931,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="32" column="6" selection-start-line="32" selection-start-column="6" selection-end-line="32" selection-end-column="6" />
           <folding>
-            <marker date="1445429882000" expanded="true" signature="1759:1763" placeholder="{...}" />
+            <marker date="1445529718000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1445529718000" expanded="true" signature="-1:-1" placeholder="{...}" />
           </folding>
         </state>
       </provider>
@@ -850,15 +996,39 @@
     <entry file="file://$PROJECT_DIR$/www/views/create.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="90" column="14" selection-start-line="88" selection-start-column="8" selection-end-line="90" selection-end-column="14" />
+          <caret line="89" column="14" selection-start-line="88" selection-start-column="8" selection-end-line="90" selection-end-column="14" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/www/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-201.6">
+          <caret line="336" column="1" selection-start-line="336" selection-start-column="1" selection-end-line="336" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.io-config.json">
+      <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="306" column="19" selection-start-line="306" selection-start-column="19" selection-end-line="306" selection-end-column="19" />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.3469386">
+          <caret line="38" column="50" selection-start-line="38" selection-start-column="50" selection-end-line="38" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.42929292">
+          <caret line="18" column="49" selection-start-line="18" selection-start-column="49" selection-end-line="18" selection-end-column="49" />
           <folding />
         </state>
       </provider>
