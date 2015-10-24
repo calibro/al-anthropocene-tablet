@@ -17,8 +17,7 @@ app.controller('CreateCtrl', function($scope,apiService,mediaService,playlistSer
     $scope.changeTab = function(tag) {
         $scope.tab = tag;
         $ionicScrollDelegate.$getByHandle('tabs').scrollTo(0,0,true);
-
-    }
+    };
 
 
     $scope.goBack = function() {
@@ -80,6 +79,8 @@ app.controller('CreateCtrl', function($scope,apiService,mediaService,playlistSer
                 _.find($scope.places[fl],function(f){return f.id == removeTagsToo.id}).selected = false;
             }
         })
+
+        computeScrollPosition();
     };
 
     $scope.selectVideo = function(vid) {
@@ -138,7 +139,7 @@ app.controller('CreateCtrl', function($scope,apiService,mediaService,playlistSer
         findInitials($scope.entities.themes, false, $scope.themes);
         findInitials($scope.entities.speakers, true, $scope.speakers);
         findInitials($scope.entities.places, true, $scope.places);
-
+        computeScrollPosition();
     };
 
     function addEntity(ent){
@@ -150,6 +151,7 @@ app.controller('CreateCtrl', function($scope,apiService,mediaService,playlistSer
           apiService.getEntity(ent.id).then(function (data) {
             $scope.selEntities.push(data);
             $scope.chunks = _.uniq(_.union($scope.chunks, data.chunks), 'id');
+            console.log($scope.chunks);
           });
         }
       else $scope.limitReached = true;
@@ -161,6 +163,7 @@ app.controller('CreateCtrl', function($scope,apiService,mediaService,playlistSer
         var chunksToRemove = _.pluck(_.find($scope.selEntities,'id',ent.id).chunks,'id');
         _.remove($scope.chunks,function(d){return chunksToRemove.indexOf(d.id)>-1;});
         _.remove($scope.selEntities,function(d){return d.id == ent.id });
+        computeScrollPosition();
     }
 
 
@@ -193,6 +196,16 @@ app.controller('CreateCtrl', function($scope,apiService,mediaService,playlistSer
         }
         return res;
     }
+
+    function computeScrollPosition() {
+        var p = $ionicScrollDelegate.$getByHandle('chunks').getScrollPosition().left;
+        var w = angular.element(document.getElementsByClassName("chunk")[0]).prop('clientWidth');
+        var l = ($scope.chunks.length * w)-w-$window.innerWidth/2+w/2;
+        if(p>l) {
+            $ionicScrollDelegate.$getByHandle('chunks').scrollTo(l,0,true);
+        }
+    }
+
 
     $scope.$watchCollection('selEntities',function(newValue, oldValue){
         socket.emit('entities',{entities: _.pluck(newValue,'id')});
