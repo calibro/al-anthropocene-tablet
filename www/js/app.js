@@ -7,10 +7,11 @@ var app = angular.module('starter', [
     'ionic',
     'btford.socket-io',
     "com.2fdevs.videogular",
-    "com.2fdevs.videogular.plugins.overlayplay"
+    "com.2fdevs.videogular.plugins.overlayplay",
+    'ngIdle'
 ]);
 
-app.config(function($stateProvider, $urlRouterProvider) {
+app.config(function($stateProvider, $urlRouterProvider,IdleProvider) {
     $urlRouterProvider.otherwise('/')
 
     $stateProvider.state('home', {
@@ -42,9 +43,10 @@ app.config(function($stateProvider, $urlRouterProvider) {
         templateUrl: 'views/play.html',
         controller: 'PlayCtrl'
     })
+    IdleProvider.idle(60);
 })
 
-.run(function($ionicPlatform, $rootScope,socket) {
+.run(function($ionicPlatform, $rootScope,socket,Idle) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -54,6 +56,5 @@ app.config(function($stateProvider, $urlRouterProvider) {
     if(window.StatusBar) {
       StatusBar.styleDefault();
     }
-
   });
 })

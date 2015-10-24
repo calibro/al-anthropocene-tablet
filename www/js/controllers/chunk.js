@@ -7,6 +7,12 @@ app.controller('chunkCtrl', function($scope,$state,chunk,$sce,$timeout,$interval
     $scope.controller.API = null;
     $scope.controller.currentVideo = 0;
 
+
+    $scope.$on('IdleStart', function() {
+        $ionicHistory.clearCache()
+        $state.go('create', {}, {reload: true, inherit: true, notify: true});
+    });
+
   var timeIntvl = null;
 
     $scope.controller.onPlayerReady = function(API) {

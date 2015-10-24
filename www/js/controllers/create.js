@@ -1,7 +1,15 @@
-app.controller('CreateCtrl', function($scope,apiService,mediaService,playlistService,$timeout,$window,$ionicHistory,$ionicScrollDelegate,$state,socket) {
+app.controller('CreateCtrl', function($scope,apiService,mediaService,playlistService,$timeout,$window,$ionicHistory,$ionicScrollDelegate,$state,socket,Idle) {
 
     $scope.tab = 'themes';
     socket.emit('changeView',{view:"create"});
+
+    Idle.watch();
+
+    $scope.$on('IdleStart', function() {
+       $scope.reset();
+    });
+
+
 
     $scope.themes={};
     $scope.speakers={};
