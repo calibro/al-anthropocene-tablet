@@ -13,7 +13,6 @@ app.controller('PlayCtrl', function($scope,$state,socket, playlistService) {
     $scope.selectedChunk = vid.id;
     $scope.currchunk = vid;
     socket.emit('playChunk',vid.id);
-
   };
 
 

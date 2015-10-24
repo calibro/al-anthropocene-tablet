@@ -14,6 +14,13 @@ app.controller('CreateCtrl', function($scope,apiService,mediaService,playlistSer
     $scope.selEntities = [];
 
 
+    $scope.changeTab = function(tag) {
+        $scope.tab = tag;
+        $ionicScrollDelegate.$getByHandle('tabs').scrollTo(0,0,true);
+
+    }
+
+
     $scope.goBack = function() {
         $ionicHistory.goBack();
     };
@@ -127,6 +134,7 @@ app.controller('CreateCtrl', function($scope,apiService,mediaService,playlistSer
         $scope.themes = [];
         $scope.speakers = [];
         $scope.places = [];
+        $scope.limitReached = false;
         findInitials($scope.entities.themes, false, $scope.themes);
         findInitials($scope.entities.speakers, true, $scope.speakers);
         findInitials($scope.entities.places, true, $scope.places);

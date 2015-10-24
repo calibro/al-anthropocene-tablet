@@ -1,9 +1,9 @@
 <ion-view title="create">
     <ion-content class="scrollable" padding="true">
       <div class="ent-menu">
-          <span on-tap="tab='themes'" ng-class="{'menu-active':tab == 'themes'}" class="menu-ls">THEMES<sup ng-show="selectedThemes.length">{{selectedThemes.length}}</sup></span>
-          <span on-tap="tab='speakers'" ng-class="{'menu-active':tab == 'speakers'}" class="menu-ls">SPEAKERS<sup ng-show="selectedSpeakers.length">{{selectedSpeakers.length}}</sup></span>
-          <span on-tap="tab='places'" ng-class="{'menu-active':tab == 'places'}" class="menu-ls">PLACES<sup ng-show="selectedPlaces.length">{{selectedPlaces.length}}</sup></span>
+          <span on-tap="changeTab('themes')" ng-class="{'menu-active':tab == 'themes'}" class="menu-ls">THEMES<sup ng-show="selectedThemes.length">{{selectedThemes.length}}</sup></span>
+          <span on-tap="changeTab('speakers')" ng-class="{'menu-active':tab == 'speakers'}" class="menu-ls">SPEAKERS<sup ng-show="selectedSpeakers.length">{{selectedSpeakers.length}}</sup></span>
+          <span on-tap="changeTab('places')" ng-class="{'menu-active':tab == 'places'}" class="menu-ls">PLACES<sup ng-show="selectedPlaces.length">{{selectedPlaces.length}}</sup></span>
       </div>
       <div class="ent-rightmenu">
           <div ng-click="reset()">reset</div>
@@ -11,7 +11,7 @@
       </div>
 
 
-      <ion-scroll direction="x" scrollbar-x="false">
+      <ion-scroll direction="x" scrollbar-x="false" delegate-handle="tabs">
 
           <div class="ent-pane">
           <div ng-show="tab=='themes'" class="ent-list" ng-repeat="t in keys(themes)">
