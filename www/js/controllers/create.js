@@ -106,6 +106,11 @@ app.controller('CreateCtrl', function($scope,apiService,mediaService,playlistSer
         }
     }
 
+    $scope.computeColumns = function(num){
+      var div = Math.ceil(num/9);
+      return div;
+    }
+
     $scope.swapVideo = function(position, $index, id) {
         if(position==1 || position == -1) {
             var b = $scope.chunks[$index+position];

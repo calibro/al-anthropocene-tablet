@@ -16,21 +16,21 @@
           <div class="ent-pane">
           <div ng-show="tab=='themes'" class="ent-list" ng-repeat="t in keys(themes)">
               <div class="first-letter">{{t}}</div>
-              <div class="word-list">
-                <div ng-class="{'tag-sel':w.selected}" on-tap="toggleEntity(w)" ng-repeat="w in themes[t] track by $index" class="word"><i ng-show="w.selected" class="ion-close-circled"> </i> {{w.name}}</div>
+              <div ng-style="{'width':computeColumns(themes[t].length)*300+'px','-webkit-column-count':computeColumns(themes[t].length)}" class="word-list">
+                <span ng-class="{'tag-sel':w.selected}" on-tap="toggleEntity(w)" ng-repeat="w in themes[t] track by $index" class="word"><i ng-show="w.selected" class="ion-close-circled"> </i> {{w.name}}</span>
               </div>
           </div>
 
             <div ng-show="tab=='speakers'" class="ent-list" ng-repeat="t in keys(speakers)">
                 <div class="first-letter">{{t}}</div>
-                <div class="word-list">
+                <div ng-style="{'width':computeColumns(speakers[t].length)*300+'px','-webkit-column-count':computeColumns(speakers[t].length)}" class="word-list">
                     <div ng-class="{'tag-sel':w.selected}" on-tap="toggleEntity(w)" ng-repeat="w in speakers[t] track by $index" class="word"><i ng-show="w.selected" class="ion-close-circled"> </i> {{w.name.split(",")[0]}}</div>
                 </div>
             </div>
 
             <div ng-show="tab=='places'" class="ent-list" ng-repeat="t in keys(places)">
                 <div class="first-letter">{{t}}</div>
-                <div class="word-list">
+                <div ng-style="{'width':computeColumns(places[t].length)*300+'px','-webkit-column-count':computeColumns(places[t].length)}" class="word-list">
                     <div ng-class="{'tag-sel':w.selected}" on-tap="toggleEntity(w)" ng-repeat="w in places[t] track by $index" class="word"><i ng-show="w.selected" class="ion-close-circled"> </i> {{w.name}}</div>
                 </div>
             </div>
