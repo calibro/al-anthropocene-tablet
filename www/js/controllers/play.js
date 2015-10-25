@@ -5,16 +5,19 @@ app.controller('PlayCtrl', function($scope,$state,socket,$timeout,playlistServic
     $scope.chunks = playlistService.getPlaylist();
     socket.emit('playlist',$scope.chunks);
 
+    $scope.currTime = 0;
     $scope.currchunk = $scope.chunks[0];
     $scope.selectedChunk = $scope.currchunk.id;
     $scope.play = true;
 
   $scope.selectVideo = function(vid) {
+    $scope.currTime = 0;
     $scope.selectedChunk = vid.id;
     $scope.currchunk = vid;
     socket.emit('playChunk',vid.id);
   };
   socket.on("playChunk",function(data){
+    $scope.currTime = 0;
     $scope.selectedChunk = data;
     $scope.currchunk = $scope.chunks.find(function(d){return d.id == data});
   })
@@ -64,8 +67,12 @@ app.controller('PlayCtrl', function($scope,$state,socket,$timeout,playlistServic
     }
   }
 
-    socket.on("playTime",function(d){
-        $scope.currPos = d;
-    })
+  socket.on("playTime",function(msg){
+    if(msg.video == $scope.selectedChunk) {
+      $scope.currTime = msg.time;
+    }
+    else $scope.currTime = 0;
+    //console.log(msg);
+  })
 
 })

@@ -231,7 +231,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 .timeline-cont{
     width:100%;
     height:45px;
-    
+
   padding: 0 20px;
   clear: both;
 }
@@ -267,6 +267,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 }
 .timeline-chunk{
     height:45px;
+    position:relative;
     border-radius: 2px;
     margin-top:calc(22px - 3px);
     float:left;
@@ -274,6 +275,12 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     border:none;
     -webkit-transition: all 0.15s linear;
     -moz-transition: all 0.15s linear;
+}
+.timeline-current{
+  position:absolute;
+  height:5px;
+  left:0;
+  background-color:white !important;
 }
 .timeline-chunk span{
     width:100%;
@@ -293,7 +300,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     opacity:1;
 }
 .timeline-chunk span.selected{
-    background-color:#fff;
+    background-color:#aaa;
 }
 .timeline-chunks{
     position:absolute;
@@ -310,7 +317,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     color:#666;
 }
 .time-duration span{
-  color:#ddd;
+  color:#bbb;
 }
 .chunk-control{
     height:100%;

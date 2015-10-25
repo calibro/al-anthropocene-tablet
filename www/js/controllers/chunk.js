@@ -2,12 +2,12 @@ app.controller('chunkCtrl', function($scope,$state,chunk,$sce,$timeout,$interval
     //socket.emit('changeView',{view:"home"});
     $scope.chunk = chunk;
 
-    $scope.controller = this;
+  /*  $scope.controller = this;
     $scope.controller.state = null;
     $scope.controller.API = null;
     $scope.controller.currentVideo = 0;
 
-
+*/
     $scope.$on('IdleStart', function() {
         $ionicHistory.clearCache()
         $state.go('create', {}, {reload: true, inherit: true, notify: true});
@@ -15,7 +15,7 @@ app.controller('chunkCtrl', function($scope,$state,chunk,$sce,$timeout,$interval
 
   var timeIntvl = null;
 
-    $scope.controller.onPlayerReady = function(API) {
+  /*  $scope.controller.onPlayerReady = function(API) {
         $scope.controller.API = API;
         $scope.controller.API.setVolume(1);
         $scope.controller.API.seekTime(parseInt($scope.chunk.start));
@@ -31,7 +31,7 @@ app.controller('chunkCtrl', function($scope,$state,chunk,$sce,$timeout,$interval
                 },1000);
             }
         },1000);
-    };
+    };*/
 
     $scope.goBack = function() {
         $interval.cancel(timeIntvl);
@@ -43,7 +43,7 @@ app.controller('chunkCtrl', function($scope,$state,chunk,$sce,$timeout,$interval
         return mediaService.getThumbUrl(vid.videoId, vid.id);
     };
 
-    $scope.controller.onCompleteVideo = function() {
+  /*  $scope.controller.onCompleteVideo = function() {
         $scope.controller.isCompleted = true;
     };
 
@@ -64,5 +64,5 @@ app.controller('chunkCtrl', function($scope,$state,chunk,$sce,$timeout,$interval
     // example : hkw-video-1-0
     $scope.go = function(where) {
         $state.go(where);
-    }
+    }*/
 })
