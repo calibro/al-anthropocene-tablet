@@ -125,13 +125,13 @@ app.controller('CreateCtrl', function($scope,apiService,mediaService,playlistSer
             $scope.chunks[$scope.chunks.length -1] = $scope.chunks[$index];
             $scope.chunks[$index] = b;
         }
+
         $timeout(function(){
-          //$scope.selectVideo({id:id})
-            // var left = angular.element(document.getElementById(id)).prop('offsetLeft');
-            // var w = angular.element(document.getElementById(id)).prop('clientWidth');
-            // console.log(id,left,w);
-            // $ionicScrollDelegate.$getByHandle('chunks').scrollTo(left-$window.innerWidth/2+w/2,0,true);
-        });
+          $scope.selectVideo({id:id})
+            //var left = angular.element(document.getElementById(id)).prop('offsetLeft');
+             //var w = angular.element(document.getElementById(id)).prop('clientWidth');
+             //$ionicScrollDelegate.$getByHandle('chunks').scrollTo(left-$window.innerWidth/2+w/2,0,true);
+        },400);
     };
 
 

@@ -89,11 +89,10 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     white-space: nowrap;
 }
 .chunk-pane{
-    /*height:calc(40vh - 45px);*/
-    /*height:163px;*/
     height:163px;
     width: -webkit-max-content;
     width:max-content;
+    position: relative;
     /*white-space: nowrap;*/
 }
 .scroll {
@@ -138,12 +137,15 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 .chunk{
     width:290px;
     max-width:290px;
-    float:left;
+    position: absolute;
     height:100%;
-    margin:0 5px 0 5px;
+    z-index: 2;
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
+    /*-webkit-transform: scale(1);
+        -ms-transform: scale(1);
+            transform: scale(1);*/
     -webkit-transform-origin: center left;
     -ms-transform-origin: center left;
         transform-origin: center left;
@@ -162,6 +164,9 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     /*width: 360px;*/
 }
 
+.chunk.ng-move{
+  z-index: 1;
+}
 
 .chunk-duration{
     float:left;
@@ -194,28 +199,6 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     font-size:2em;
     line-height:40px;
 }
-.chunk-main{
-    margin:5% 0 0 0;
-    position:relative;
-    background-position: center center;
-    background-repeat: no-repeat;
-    top:0;
-    height:80%;
-    background-size: cover;
-    z-index: 1;
-    -webkit-transform-origin: center left;
-    -ms-transform-origin: center left;
-        transform-origin: center left;
-    -webkit-transition: all 0.15s linear;
-    -moz-transition: all 0.15s linear;
-}
-/*.chunk-main.selected-chunk{
-    margin:0 0px 0 0px;
-    top:3%;
-    height:100%;
-    width:460px;
-    z-index:2;
-}*/
 
 .selected-chunk{
   -webkit-transform: scale(1.3);

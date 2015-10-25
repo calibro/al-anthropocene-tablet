@@ -48,7 +48,9 @@
                   id="{{c.id}}"
                   on-tap="deselectChunk(c.id)"
                   class="chunk"
-                  ng-style="{'background-image':'url('+getThumb(c)+')'}"
+                  ng-style="{'background-image':'url('+getThumb(c)+')',
+                              'transform':'translate3d('+$index * 295+'px, 0, 0)'
+                            }"
                   ng-class="{'selected-chunk': selectedChunk == c.id}"
                 >
                         <div class="chunk-control" ng-class="{'chunk-control-unselected': selectedChunk != c.id && selectedChunk}">
