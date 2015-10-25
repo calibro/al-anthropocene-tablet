@@ -36,12 +36,13 @@ app.controller('chunkCtrl', function($scope,$state,chunk,$sce,$timeout,$interval
     $scope.goBack = function() {
         $interval.cancel(timeIntvl);
         $ionicHistory.goBack();
+
     };
 
     $scope.getThumb = function(vid) {
         return mediaService.getThumbUrl(vid.videoId, vid.id);
     };
-    
+
     $scope.controller.onCompleteVideo = function() {
         $scope.controller.isCompleted = true;
     };

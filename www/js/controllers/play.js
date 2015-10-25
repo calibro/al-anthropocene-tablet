@@ -35,12 +35,12 @@ app.controller('PlayCtrl', function($scope,$state,socket,$timeout,playlistServic
     $scope.go = function(where) {
         $state.go(where);
         //Idle.watch();
-      socket.emit('changeView',{view:"create"});
+      socket.emit('changeView',{view:"create",reload:false});
     }
 
     $scope.reset = function() {
       $ionicHistory.clearCache();
-      socket.emit('changeView',{view:"create"});
+      socket.emit('changeView',{view:"create",reload:true});
       $state.go('create', {}, {reload: true, inherit: true, notify: true});
     }
 

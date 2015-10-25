@@ -1,7 +1,10 @@
-app.controller('CreateCtrl', function($scope,apiService,mediaService,playlistService,$timeout,$window,$ionicHistory,$ionicScrollDelegate,$state,socket,Idle) {
+app.controller('CreateCtrl', function($scope,$stateParams,apiService,mediaService,playlistService,$timeout,$window,$ionicHistory,$ionicScrollDelegate,$state,socket,Idle) {
 
     $scope.tab = 'themes';
     socket.emit('changeView',{view:"create"});
+
+
+
 
     Idle.watch();
 
@@ -216,7 +219,7 @@ app.controller('CreateCtrl', function($scope,apiService,mediaService,playlistSer
             $ionicScrollDelegate.$getByHandle('chunks').scrollTo(l,0,true);
         }
     }
-
+    
 
     $scope.$watchCollection('selEntities',function(newValue, oldValue){
         socket.emit('entities',{entities: _.pluck(newValue,'id')});

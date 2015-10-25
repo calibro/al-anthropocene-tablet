@@ -28,7 +28,7 @@ $ionicConfigProvider.views.swipeBackEnabled(false);
         controller: 'PlayCtrl'
     },*/
     $stateProvider.state('create', {
-        url: '/create',
+        url: '/create?reset',
         templateUrl: 'views/create.html',
         controller: 'CreateCtrl'
     });
