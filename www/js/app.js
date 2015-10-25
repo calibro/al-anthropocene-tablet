@@ -11,8 +11,12 @@ var app = angular.module('starter', [
     'ngIdle'
 ]);
 
-app.config(function($stateProvider, $urlRouterProvider,IdleProvider) {
-    $urlRouterProvider.otherwise('/')
+app.config(function($ionicConfigProvider,$stateProvider, $urlRouterProvider,IdleProvider) {
+
+$ionicConfigProvider.views.swipeBackEnabled(false);
+
+
+    $urlRouterProvider.otherwise('/create')
 
     $stateProvider.state('home', {
         url: '/',
