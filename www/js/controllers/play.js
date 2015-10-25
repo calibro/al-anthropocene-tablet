@@ -1,4 +1,4 @@
-app.controller('PlayCtrl', function($scope,$state,socket, playlistService) {
+app.controller('PlayCtrl', function($scope,$state,socket,$timeout,playlistService,$ionicHistory) {
 
     socket.emit('changeView',{view:"play"});
 
@@ -38,7 +38,11 @@ app.controller('PlayCtrl', function($scope,$state,socket, playlistService) {
       socket.emit('changeView',{view:"create"});
     }
 
-
+    $scope.reset = function() {
+      $ionicHistory.clearCache();
+      socket.emit('changeView',{view:"create"});
+      $state.go('create', {}, {reload: true, inherit: true, notify: true});
+    }
 
   $scope.prev = function(){
     console.log("prev");
@@ -65,5 +69,3 @@ app.controller('PlayCtrl', function($scope,$state,socket, playlistService) {
     })
 
 })
-
-

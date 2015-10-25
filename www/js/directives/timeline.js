@@ -4,8 +4,8 @@ app.directive('timeline', function() {
         templateUrl: 'views/timeline.html',
         link: function(scope, iElement, iAttrs) {
        //   scope.totalTime = _.sum(scope.chunks,'duration');
-            scope.$watchCollection('chunks',function(oldValue,newValue){
-               scope.totalTime = _.sum(oldValue,'duration');
+            scope.$watchCollection('chunks',function(newValue,oldValue){
+               scope.totalTime = _.sum(newValue,'duration');
             });
 
           scope.computeWidth = function(duration){

@@ -48,27 +48,42 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     line-height:45px;
     padding-left:20px;
     float:left;
-    padding-top: 30px;
+    margin-bottom: 20px;
+    padding-top: 10px;
 }
 .ent-rightmenu{
-    float:right;
-    padding-right:20px;
-    height:45px;
-    margin-top:30px;
+  float:right;
+  display:block;
+      width: 200px;
 }
-.ent-rightmenu div{
+.ent-leftmenu{
+  float:left;
+  display:block;
+      width: 200px;
+}
+.ent-rightmenu div, .ent-leftmenu div{
     float:left;
     padding:3px 15px;
-    margin-left:10px;
     border:2px solid white;
     text-transform: uppercase;
     height: 30px;
+    width:100%;
     letter-spacing: 1px;
+    padding: 0px 15px;
+    line-height: 200%;
 }
+.bottom-menu{
+  width:calc(100% - 40px);
+  margin:0 20px;
+  text-align:center;
+  margin-top:20px;
+}
+
 .scroll-view{
     width: 100%;
     margin-left: 0px;
     margin-right: 0px;
+    margin-top: -30px;
 }
 .menu-ls{
     margin-right:50px;
@@ -121,6 +136,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     white-space: nowrap;
     text-overflow: ellipsis;
     padding:2px 5px;
+    line-height: 20px;
     margin-bottom:2px;
 }
 .word-list{
@@ -284,6 +300,17 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     width:100%;
     top:0;
     height:100%;
+    z-index:3;
+}
+.time-duration{
+  position: relative;
+    top: -15px;
+    left: 3px;
+    height:15px;
+    color:#666;
+}
+.time-duration span{
+  color:#ddd;
 }
 .chunk-control{
     height:100%;
@@ -515,8 +542,7 @@ videogular vg-media video{
   flex-wrap: nowrap;
   justify-content:space-between;
   margin: 0 auto;
-  clear: both;
-  margin-top:20px;
+
 }
 .play-ctrls div{
   width:30px;

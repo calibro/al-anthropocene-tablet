@@ -4,11 +4,9 @@
           <span on-tap="changeTab('themes')" ng-class="{'menu-active':tab == 'themes'}" class="menu-ls">THEMES<sup ng-show="selectedThemes.length">{{selectedThemes.length}}</sup></span>
           <span on-tap="changeTab('speakers')" ng-class="{'menu-active':tab == 'speakers'}" class="menu-ls">SPEAKERS<sup ng-show="selectedSpeakers.length">{{selectedSpeakers.length}}</sup></span>
           <span on-tap="changeTab('places')" ng-class="{'menu-active':tab == 'places'}" class="menu-ls">PLACES<sup ng-show="selectedPlaces.length">{{selectedPlaces.length}}</sup></span>
+          <div style="clear:both;height:1px;"></div>
       </div>
-      <div class="ent-rightmenu">
-          <div ng-click="reset()">reset</div>
-          <div ng-click="goBack()">back</div>
-      </div>
+
 
 
       <ion-scroll direction="x" scrollbar-x="false" delegate-handle="tabs">
@@ -34,6 +32,7 @@
                     <div ng-class="{'tag-sel':w.selected}" on-tap="toggleEntity(w)" ng-repeat="w in places[t] track by $index" class="word"><i ng-show="w.selected" class="ion-close-circled"> </i> {{w.name}}</div>
                 </div>
             </div>
+
         </div>
       </ion-scroll>
 
@@ -86,9 +85,18 @@
             </div>
         </ion-scroll>
         <timeline></timeline>
-        <div ng-show="chunks.length" on-tap="play()" class="play-button">
-            <i class="ion-ios-play play"></i>
+        <div class="bottom-menu" ng-show="chunks.length">
+            <div style="float:left;width:100px;"></div>
+            <div class="ent-rightmenu">
+                <div ng-click="reset()">reset</div>
+                <!--<div ng-click="goBack()">back</div>-->
+            </div>
+            <div on-tap="play()" class="play-button"><i class="ion-ios-play play"></i></div>
+
         </div>
+
+
+
 
       <div class="help-limit" ng-show="limitReached">
 

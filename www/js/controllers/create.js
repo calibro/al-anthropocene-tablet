@@ -10,7 +10,6 @@ app.controller('CreateCtrl', function($scope,apiService,mediaService,playlistSer
     });
 
 
-
     $scope.themes={};
     $scope.speakers={};
     $scope.places={};
@@ -20,7 +19,6 @@ app.controller('CreateCtrl', function($scope,apiService,mediaService,playlistSer
     $scope.selectedPlaces = [];
     $scope.selectedChunk = "";
     $scope.selEntities = [];
-
 
     $scope.changeTab = function(tag) {
         $scope.tab = tag;
