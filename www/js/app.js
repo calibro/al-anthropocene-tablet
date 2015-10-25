@@ -43,7 +43,7 @@ app.config(function($stateProvider, $urlRouterProvider,IdleProvider) {
         templateUrl: 'views/play.html',
         controller: 'PlayCtrl'
     })
-    IdleProvider.idle(60);
+    //IdleProvider.idle(60);
 })
 
 .run(function($ionicPlatform, $rootScope,socket,Idle) {
