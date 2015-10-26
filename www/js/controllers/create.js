@@ -257,5 +257,9 @@ app.controller('CreateCtrl', function($scope,$stateParams,apiService,mediaServic
         $scope.selectedPlaces = _.filter(newValue, _.matchesProperty('category', 'place'));
     });
 
+  socket.on("resetCreate",function(data){
+    $scope.reset();
+  })
+
 
 });

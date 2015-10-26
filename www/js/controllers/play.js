@@ -1,9 +1,14 @@
-app.controller('PlayCtrl', function($scope,$state,socket,$timeout,playlistService,$ionicHistory,$ionicScrollDelegate) {
+app.controller('PlayCtrl', function($scope,$rootScope,$state,socket,$timeout,playlistService,$ionicHistory,$ionicScrollDelegate,Idle) {
 
     socket.emit('changeView',{view:"play"});
 
     $scope.chunks = playlistService.getPlaylist();
     socket.emit('playlist',$scope.chunks);
+
+
+
+
+
 
     $scope.currTime = 0;
     $scope.currchunk = $scope.chunks[0];
@@ -44,10 +49,21 @@ app.controller('PlayCtrl', function($scope,$state,socket,$timeout,playlistServic
       socket.emit('changeView',{view:"create",reload:false});
     }
 
+
+  $scope.$on('IdleStart', function() {
+    $ionicHistory.clearCache()
+    $state.go('create', {}, {reload: true, inherit: true, notify: true});
+    //Idle.setIdle(60);
+  });
+
+
+
     $scope.reset = function() {
-      $ionicHistory.clearCache();
       socket.emit('changeView',{view:"create",reload:true});
-      $state.go('create', {}, {reload: true, inherit: true, notify: true});
+      $ionicHistory.clearCache();
+      $state.go('create', {}, {reload: true, inherit: false, notify: true});
+      //Idle.setIdle(1);
+
     }
 
   $scope.prev = function(){

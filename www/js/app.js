@@ -29,7 +29,7 @@ $ionicConfigProvider.views.swipeBackEnabled(false);
         controller: 'PlayCtrl'
     },*/
     $stateProvider.state('create', {
-        url: '/create?reset',
+        url: '/create',
         templateUrl: 'views/create.html',
         controller: 'CreateCtrl'
     });
@@ -48,7 +48,7 @@ $ionicConfigProvider.views.swipeBackEnabled(false);
         templateUrl: 'views/play.html',
         controller: 'PlayCtrl'
     })
-    //IdleProvider.idle(60);
+    IdleProvider.idle(10);
 })
 
 .run(function($ionicPlatform, $rootScope,socket,Idle) {
