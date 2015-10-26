@@ -7,7 +7,7 @@ app.controller('PlayCtrl', function($scope,$rootScope,$state,socket,$timeout,pla
 
 
 
-    socket.on("resetCreate",function(msg){
+    socket.on("backToCreate",function(msg){
       $scope.reset();
     })
 

@@ -3,14 +3,10 @@ app.controller('CreateCtrl', function($scope,$stateParams,apiService,mediaServic
     $scope.tab = 'themes';
     socket.emit('changeView',{view:"create"});
 
-
-
-
     Idle.watch();
 
     $scope.$on('IdleStart', function() {
        $scope.reset();
-
     });
 
 
@@ -261,8 +257,11 @@ app.controller('CreateCtrl', function($scope,$stateParams,apiService,mediaServic
     });
 
   socket.on("resetCreate",function(data){
+    $scope.reset();
+    /*
     $ionicHistory.clearCache()
     $state.go('create', {}, {reload: true, inherit: true, notify: true});
+    */
   })
 
 
