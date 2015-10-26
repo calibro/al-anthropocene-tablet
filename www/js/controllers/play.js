@@ -1,4 +1,4 @@
-app.controller('PlayCtrl', function($scope,$state,socket,$timeout,playlistService,$ionicHistory) {
+app.controller('PlayCtrl', function($scope,$state,socket,$timeout,playlistService,$ionicHistory,$ionicScrollDelegate) {
 
     socket.emit('changeView',{view:"play"});
 
@@ -11,6 +11,7 @@ app.controller('PlayCtrl', function($scope,$state,socket,$timeout,playlistServic
     $scope.play = true;
 
   $scope.selectChunk = function(id,ind) {
+    $ionicScrollDelegate.$getByHandle('play').scrollTop(true);
     $scope.play = true;
     $scope.currTime = 0;
     $scope.selectedChunk = {id:id,index:ind};
@@ -18,6 +19,7 @@ app.controller('PlayCtrl', function($scope,$state,socket,$timeout,playlistServic
     socket.emit('playChunk',id);
   };
   socket.on("playChunk",function(data){
+    $ionicScrollDelegate.$getByHandle('play').scrollTop(true);
     $scope.currTime = 0;
     $scope.play = true;
     $scope.selectedChunk = {id:data};
