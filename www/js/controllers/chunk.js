@@ -11,6 +11,7 @@ app.controller('chunkCtrl', function($scope,$state,chunk,$sce,$timeout,$interval
     $scope.$on('IdleStart', function() {
         $ionicHistory.clearCache()
         $state.go('create', {}, {reload: true, inherit: true, notify: true});
+        socket.emit("reset");
     });
 
   var timeIntvl = null;

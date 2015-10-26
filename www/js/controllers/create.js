@@ -10,6 +10,7 @@ app.controller('CreateCtrl', function($scope,$stateParams,apiService,mediaServic
 
     $scope.$on('IdleStart', function() {
        $scope.reset();
+
     });
 
 
@@ -177,6 +178,8 @@ app.controller('CreateCtrl', function($scope,$stateParams,apiService,mediaServic
         findInitials($scope.entities.speakers, true, $scope.speakers);
         findInitials($scope.entities.places, true, $scope.places);
         computeScrollPosition();
+        socket.emit("reset");
+
     };
   $scope.checkSelected = function(id) {
     if(id == $scope.selectedChunk.id) return true;
