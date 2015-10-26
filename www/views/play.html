@@ -34,6 +34,19 @@
 
 <timeline></timeline>
 
+<div class="bottom-menu" ng-show="chunks.length">
+
+  <div on-tap="go('create')" class="ent-leftmenu">
+      <div >edit video</div>
+      <!--<div ng-click="goBack()">back</div>-->
+  </div>
+
+
+  <div on-tap="reset()" class="ent-rightmenu">
+      <div >create new video</div>
+      <!--<div ng-click="goBack()">back</div>-->
+  </div>
+
 
   <div class="play-ctrls">
 
@@ -51,7 +64,5 @@
     </div>
 
   </div>
-
-  <div on-tap="go('create')">go back please</div>
-
+</div>
 </div>

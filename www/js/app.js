@@ -11,8 +11,12 @@ var app = angular.module('starter', [
     'ngIdle'
 ]);
 
-app.config(function($stateProvider, $urlRouterProvider,IdleProvider) {
-    $urlRouterProvider.otherwise('/')
+app.config(function($ionicConfigProvider,$stateProvider, $urlRouterProvider,IdleProvider) {
+
+$ionicConfigProvider.views.swipeBackEnabled(false);
+
+
+    $urlRouterProvider.otherwise('/create')
 
     $stateProvider.state('home', {
         url: '/',
@@ -24,7 +28,7 @@ app.config(function($stateProvider, $urlRouterProvider,IdleProvider) {
         controller: 'PlayCtrl'
     },*/
     $stateProvider.state('create', {
-        url: '/create',
+        url: '/create?reset',
         templateUrl: 'views/create.html',
         controller: 'CreateCtrl'
     });

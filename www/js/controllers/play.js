@@ -1,20 +1,23 @@
-app.controller('PlayCtrl', function($scope,$state,socket, playlistService) {
+app.controller('PlayCtrl', function($scope,$state,socket,$timeout,playlistService,$ionicHistory) {
 
     socket.emit('changeView',{view:"play"});
 
     $scope.chunks = playlistService.getPlaylist();
     socket.emit('playlist',$scope.chunks);
 
+    $scope.currTime = 0;
     $scope.currchunk = $scope.chunks[0];
     $scope.selectedChunk = $scope.currchunk.id;
     $scope.play = true;
 
   $scope.selectVideo = function(vid) {
+    $scope.currTime = 0;
     $scope.selectedChunk = vid.id;
     $scope.currchunk = vid;
     socket.emit('playChunk',vid.id);
   };
   socket.on("playChunk",function(data){
+    $scope.currTime = 0;
     $scope.selectedChunk = data;
     $scope.currchunk = $scope.chunks.find(function(d){return d.id == data});
   })
@@ -35,10 +38,14 @@ app.controller('PlayCtrl', function($scope,$state,socket, playlistService) {
     $scope.go = function(where) {
         $state.go(where);
         //Idle.watch();
-      socket.emit('changeView',{view:"create"});
+      socket.emit('changeView',{view:"create",reload:false});
     }
 
-
+    $scope.reset = function() {
+      $ionicHistory.clearCache();
+      socket.emit('changeView',{view:"create",reload:true});
+      $state.go('create', {}, {reload: true, inherit: true, notify: true});
+    }
 
   $scope.prev = function(){
     console.log("prev");
@@ -60,10 +67,12 @@ app.controller('PlayCtrl', function($scope,$state,socket, playlistService) {
     }
   }
 
-    socket.on("playTime",function(d){
-        $scope.currPos = d;
-    })
+  socket.on("playTime",function(msg){
+    if(msg.video == $scope.selectedChunk) {
+      $scope.currTime = msg.time;
+    }
+    else $scope.currTime = 0;
+    //console.log(msg);
+  })
 
 })
-
-

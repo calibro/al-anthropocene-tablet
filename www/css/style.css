@@ -48,27 +48,42 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     line-height:45px;
     padding-left:20px;
     float:left;
-    padding-top: 30px;
+    margin-bottom: 20px;
+    padding-top: 10px;
 }
 .ent-rightmenu{
-    float:right;
-    padding-right:20px;
-    height:45px;
-    margin-top:30px;
+  float:right;
+  display:block;
+      width: 200px;
 }
-.ent-rightmenu div{
+.ent-leftmenu{
+  float:left;
+  display:block;
+      width: 200px;
+}
+.ent-rightmenu div, .ent-leftmenu div{
     float:left;
     padding:3px 15px;
-    margin-left:10px;
     border:2px solid white;
     text-transform: uppercase;
     height: 30px;
+    width:100%;
     letter-spacing: 1px;
+    padding: 0px 15px;
+    line-height: 200%;
 }
+.bottom-menu{
+  width:calc(100% - 40px);
+  margin:0 20px;
+  text-align:center;
+  margin-top:20px;
+}
+
 .scroll-view{
     width: 100%;
     margin-left: 0px;
     margin-right: 0px;
+    margin-top: -15px;
 }
 .menu-ls{
     margin-right:50px;
@@ -115,16 +130,19 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 }
 .word{
     color:#fff;
-    width: auto;
+    width: 100%;
+    overflow:hidden;
     display: block;
     text-transform: uppercase;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding:2px 5px;
+    line-height: 20px;
+    margin-bottom:2px;
 }
 .word-list{
-    -moz-column-count:2;
-    -webkit-column-count:2;
-    column-count:2;
-    height: 40px;
     height:100%;
+
 }
 
 
@@ -132,7 +150,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     color:black;
     background:white;
     text-decoration: none;
-    padding:2px 5px;
+
 }
 .chunk{
     width:290px;
@@ -225,7 +243,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 .timeline-cont{
     width:100%;
     height:45px;
-    margin-top:10px;
+
   padding: 0 20px;
   clear: both;
 }
@@ -261,6 +279,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 }
 .timeline-chunk{
     height:45px;
+    position:relative;
     border-radius: 2px;
     margin-top:calc(22px - 3px);
     float:left;
@@ -268,6 +287,12 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     border:none;
     -webkit-transition: all 0.15s linear;
     -moz-transition: all 0.15s linear;
+}
+.timeline-current{
+  position:absolute;
+  height:5px;
+  left:0;
+  background-color:white !important;
 }
 .timeline-chunk span{
     width:100%;
@@ -287,13 +312,24 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     opacity:1;
 }
 .timeline-chunk span.selected{
-    background-color:#fff;
+    background-color:#aaa;
 }
 .timeline-chunks{
     position:absolute;
     width:100%;
     top:0;
     height:100%;
+    z-index:3;
+}
+.time-duration{
+  position: relative;
+    top: -15px;
+    left: 3px;
+    height:15px;
+    color:#666;
+}
+.time-duration span{
+  color:#bbb;
 }
 .chunk-control{
     height:100%;
@@ -380,12 +416,12 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 .help-3-ar, .help-3-txt, .help-limit{
     width:100%;
     text-align:center;
-    font-size:1em;
+    font-size:1.2em;
     color: #dbb550;
 }
 .help-limit{
   position:fixed;
-  top:49%;
+  top:48%;
 }
 .help-3-ar{
     font-size:1.4em;
@@ -549,8 +585,7 @@ videogular vg-media video{
   flex-wrap: nowrap;
   justify-content:space-between;
   margin: 0 auto;
-  clear: both;
-  margin-top:20px;
+
 }
 .play-ctrls div{
   width:30px;
