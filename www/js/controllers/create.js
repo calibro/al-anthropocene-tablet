@@ -1,5 +1,10 @@
 app.controller('CreateCtrl', function($scope,$stateParams,apiService,mediaService,playlistService,$timeout,$window,$ionicHistory,$ionicScrollDelegate,$state,socket,Idle) {
 
+  $scope.$on('$ionicView.afterEnter', function (){
+        if(navigator.splashscreen){
+            navigator.splashscreen.hide();
+        }
+    });
     $scope.tab = 'themes';
     socket.emit('changeView',{view:"create"});
 
