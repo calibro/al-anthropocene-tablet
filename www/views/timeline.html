@@ -10,6 +10,7 @@
             </div>
         </div>
     </div>
-    <span ng-show="chunks.length" class="time-duration">
-      <span ng-if="currchunk">{{currchunk.duration | dateFilter}} /</span> {{totalTime | dateFilter}}</span>
+      <div ng-show="chunks.length" class="time-duration">
+        <span ng-if="currchunk">{{currchunk.duration | dateFilter}} /</span> {{totalTime | dateFilter}}
+      </div>
 </div>
