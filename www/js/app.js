@@ -8,7 +8,8 @@ var app = angular.module('starter', [
     'btford.socket-io',
     "com.2fdevs.videogular",
     "com.2fdevs.videogular.plugins.overlayplay",
-    'ngIdle'
+    'ngIdle',
+    'ngIOS9UIWebViewPatch'
 ]);
 
 app.config(function($ionicConfigProvider,$stateProvider, $urlRouterProvider,IdleProvider) {

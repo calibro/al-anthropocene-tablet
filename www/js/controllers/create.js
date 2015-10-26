@@ -179,7 +179,7 @@ app.controller('CreateCtrl', function($scope,$stateParams,apiService,mediaServic
         computeScrollPosition();
     };
   $scope.checkSelected = function(id) {
-    if(id == $scope.selectedChunk) return true;
+    if(id == $scope.selectedChunk.id) return true;
     else return false;
   }
 
