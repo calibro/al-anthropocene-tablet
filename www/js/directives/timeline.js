@@ -8,9 +8,9 @@ app.directive('timeline', function(socket) {
                scope.totalTime = _.sum(newValue,'duration');
             });
 
-            
+
             scope.isCurrent= function(c) {
-              return scope.currchunk && scope.selectedChunk==c;
+              return scope.currchunk && scope.selectedChunk.id==c;
             }
 
           scope.computeWidth = function(duration){

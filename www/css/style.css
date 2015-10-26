@@ -405,7 +405,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 .timeline-current{
   position:absolute;
   height:5px;
-  left:0;
+  left:2px;
   background-color:white !important;
 }
 .timeline-chunk span{
