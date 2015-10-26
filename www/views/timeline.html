@@ -2,7 +2,7 @@
     <div class="timeline-base">
         <div class="timeline">
             <div class="timeline-chunks">
-            <div class="timeline-chunk" on-tap="selectVideo(c)" ng-repeat="c in chunks" ng-style="{'width':computeWidth(c.duration)}">
+            <div class="timeline-chunk" on-tap="selectVideo(c,$index)" ng-repeat="c in chunks" ng-style="{'width':computeWidth(c.duration)}">
               <span ng-class="{'selected':selectedChunk==c.id}">
                 <span ng-show="isCurrent(c.id)" class="timeline-current" ng-style="{'width':currTime+'%'}"></span>
               </span>

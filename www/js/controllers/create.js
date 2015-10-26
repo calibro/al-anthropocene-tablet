@@ -29,6 +29,15 @@ app.controller('CreateCtrl', function($scope,$stateParams,apiService,mediaServic
     };
 
 
+  $scope.$watch('tab',function(newVal,oldVal){
+    console.log("tags");
+    console.log(newVal,oldVal);
+    if(newVal!=oldVal) {
+      console.log("newVal!",newVal);
+      $ionicScrollDelegate.$getByHandle('tags').scrollTo(0,0,true);
+    }
+  })
+
     $scope.goBack = function() {
         $ionicHistory.goBack();
     };
@@ -92,11 +101,13 @@ app.controller('CreateCtrl', function($scope,$stateParams,apiService,mediaServic
         computeScrollPosition();
     };
 
-    $scope.selectVideo = function(vid) {
-       var left = angular.element(document.getElementById(vid.id)).prop('offsetLeft');
-        var w = angular.element(document.getElementById(vid.id)).prop('clientWidth');
+    $scope.selectVideo = function(vid,ind) {
 
+      var w = angular.element(document.getElementsByClassName('chunk')[0]).prop('clientWidth');
+      var left = ind * w;
        $scope.selectedChunk = vid.id;
+      console.log(w,left);
+
         $ionicScrollDelegate.$getByHandle('chunks').scrollTo(left-$window.innerWidth/2+w/2,0,true);
     };
 
@@ -113,26 +124,30 @@ app.controller('CreateCtrl', function($scope,$stateParams,apiService,mediaServic
     }
 
     $scope.swapVideo = function(position, $index, id) {
+       var newPos = 0;
         if(position==1 || position == -1) {
             var b = $scope.chunks[$index+position];
+          newPos = $index+position;
             $scope.chunks[$index+position] = $scope.chunks[$index];
             $scope.chunks[$index] = b;
         }
         else if(position=="start") {
             var b = $scope.chunks[0];
+          newPos = 0;
             $scope.chunks[0] = $scope.chunks[$index];
             $scope.chunks[$index] = b;
         }
         else if(position == "end") {
             var b = $scope.chunks[$scope.chunks.length -1];
+          newPos = $scope.chunks.length -1;
             $scope.chunks[$scope.chunks.length -1] = $scope.chunks[$index];
             $scope.chunks[$index] = b;
         }
         $timeout(function(){
-            var left = angular.element(document.getElementById(id)).prop('offsetLeft');
-            var w = angular.element(document.getElementById(id)).prop('clientWidth');
-            console.log(id,left,w);
+            var w = angular.element(document.getElementsByClassName('chunk')[0]).prop('clientWidth');
+            var left = newPos * w;
             $ionicScrollDelegate.$getByHandle('chunks').scrollTo(left-$window.innerWidth/2+w/2,0,true);
+            $scope.$apply();
         });
     };
 
@@ -155,6 +170,10 @@ app.controller('CreateCtrl', function($scope,$stateParams,apiService,mediaServic
         findInitials($scope.entities.places, true, $scope.places);
         computeScrollPosition();
     };
+  $scope.checkSelected = function(id) {
+    if(id == $scope.selectedChunk) return true;
+    else return false;
+  }
 
     function addEntity(ent){
 
@@ -219,7 +238,7 @@ app.controller('CreateCtrl', function($scope,$stateParams,apiService,mediaServic
             $ionicScrollDelegate.$getByHandle('chunks').scrollTo(l,0,true);
         }
     }
-    
+
 
     $scope.$watchCollection('selEntities',function(newValue, oldValue){
         socket.emit('entities',{entities: _.pluck(newValue,'id')});
@@ -227,4 +246,6 @@ app.controller('CreateCtrl', function($scope,$stateParams,apiService,mediaServic
         $scope.selectedSpeakers = _.filter(newValue, _.matchesProperty('category', 'speaker'));
         $scope.selectedPlaces = _.filter(newValue, _.matchesProperty('category', 'place'));
     });
+
+
 });
