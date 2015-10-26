@@ -258,7 +258,8 @@ app.controller('CreateCtrl', function($scope,$stateParams,apiService,mediaServic
     });
 
   socket.on("resetCreate",function(data){
-    $scope.reset();
+    $ionicHistory.clearCache()
+    $state.go('create', {}, {reload: true, inherit: true, notify: true});
   })
 
 
