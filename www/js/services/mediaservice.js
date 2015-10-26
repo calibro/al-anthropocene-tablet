@@ -1,12 +1,12 @@
 
 app.factory('mediaService', function ($q, $http) {
-    var baseurl = 'http://131.175.56.235/';
+    var baseurl = 'data/';
     return {
         getVideoUrl : function(id) {
             return baseurl + "antropovids/" + id + ".mp4";
         },
         getThumbUrl : function(videoId, chunkId) {
-            var thumburl = "antropovids/thumbs/output/";
+            var thumburl = "thumbs/";
             chunkId = chunkId.replace(videoId+"-","");
             var ch = chunkId.split("-")[0];
             return baseurl + thumburl + videoId + "/chunk-" + (parseInt(ch)+1) + "-sh-2.png";

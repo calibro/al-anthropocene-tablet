@@ -42,44 +42,56 @@
                 <div class="help-3-txt">Select a maximum of 3 topics among themes, speakers or places to create a new video</div>
             </div>
             <div class="chunk-pane">
+<!-- on-tap="deselectChunk(c.id, $index)"
+                  ion-stop-event="tap"
+ng-class="{'selected-chunk': selectedChunk==c.id}"
+                -->
                 <div
                   ng-repeat="c in chunks"
                   id="{{c.id}}"
-                  on-tap="deselectChunk(c.id)"
-                  class="chunk"
-                  ng-style="{'background-image':'url('+getThumb(c)+')',
-                              'transform':'translate3d('+$index * 295+'px, 0, 0)'
-                            }"
-                  ng-class="{'selected-chunk': selectedChunk == c.id}"
+                  class="chunk-container"
+                  ng-style="{'transform':'translate3d('+$index * 295+'px, 0, 0)'}"
+                  on-tap="selectChunk(c.id, $index)"
+                  index="{{$index}}"
+                  chunkcontainer
                 >
-                        <div class="chunk-control" ng-class="{'chunk-control-unselected': selectedChunk != c.id && selectedChunk}">
-
-                            <div class="row" ng-show="selectedChunk==c.id">
-                              <div class="col">
-                                <div class="chunk-time">{{ c.duration*1000| date:'mm:ss'}} min</div>
-                                <span class="chunk-title" ng-repeat="s in c.speakers">{{s.name.split(",")[0]}}{{$last ? '' : ', '}}</span>
-                              </div>
-                            </div>
-                            <div class="row chunk-swap" ng-show="selectedChunk==c.id">
-                              <div class="col">
-                                <div on-tap="swapVideo('start',$index,c.id)" ng-style="{'opacity':$first ? 0 : 1}" class="chunk-move button button-icon icon ion-ios-skipbackward"></div>
-                                <div on-tap="swapVideo(-1,$index,c.id)" ng-style="{'opacity':$first ? 0 : 1}" class="chunk-move button button-icon icon ion-arrow-left-b" ></div>
-                                <div on-tap="swapVideo(1,$index,c.id)" ng-style="{'opacity':$last ? 0 : 1}" class="chunk-move button button-icon icon ion-arrow-right-b" ></div>
-                                <div on-tap="swapVideo('end',$index,c.id)" ng-style="{'opacity':$last ? 0 : 1}" class="chunk-move button button-icon icon ion-ios-skipforward" ></div>
-                              </div>
-
-                              <div ng-show="selectedChunk==c.id" class="row">
-                                <div class="col col-40 col-offset-10">
-                                  <div class="chunk-button" on-tap="gotoPreview(c.id)">info</div>
-                                </div>
-                                <div class="col col-40">
-                                  <div class="chunk-button" on-tap="removeChunk($index)">remove</div>
-                                </div>
-                                <div class="col col-10">
-                                </div>
-                              </div>
-
+                  <div
+                    class="chunk"
+                    ng-style="{'background-image':'url('+getThumb(c)+')'}"
+                    ng-class="{'selected-chunk': selectedChunk.id==c.id}"
+                    >
+                    <!-- <div class="chunk-control" ng-class="{'chunk-control-unselected': selectedChunk != c.id && selectedChunk}"> -->
+                      <div class="chunk-control" ng-if="selectedChunk.id ==c.id?1:0" ng-class="{'chunk-control-selected': selectedChunk.id == c.id}">
+                        <div class="row" >
+                          <div class="col">
+                            <div class="chunk-time">{{ c.duration*1000| date:'mm:ss'}} min</div>
+                            <span class="chunk-title" ng-repeat="s in c.speakers">{{s.name.split(",")[0]}}{{$last ? '' : ', '}}</span>
+                          </div>
                         </div>
+
+                        <div class="row chunk-swap" >
+                          <div class="col">
+                            <div ion-stop-event="tap" on-tap="swapVideo('start',$index,c.id)" ng-disabled="$first"  class="chunk-move button button-icon icon ion-ios-skipbackward"></div>
+                            <div ion-stop-event="tap" on-tap="swapVideo(-1,$index,c.id)" ng-disabled="$first" class="chunk-move button button-icon icon ion-arrow-left-b" ></div>
+                            <div ion-stop-event="tap" on-tap="swapVideo(1,$index,c.id)" ng-disabled="$last" class="chunk-move button button-icon icon ion-arrow-right-b" ></div>
+                            <div ion-stop-event="tap" on-tap="swapVideo('end',$index,c.id)" ng-disabled="$last" class="chunk-move button button-icon icon ion-ios-skipforward" ></div>
+                          </div>
+                        </div>
+
+                          <div class="row">
+                            <div class="col col-40 col-offset-10">
+                              <div ion-stop-event="tap" class="chunk-button" on-tap="gotoPreview(c.id)">info</div>
+                            </div>
+                            <div class="col col-40">
+                              <div ion-stop-event="tap" class="chunk-button" on-tap="removeChunk($index)">remove</div>
+                            </div>
+                            <div class="col col-10">
+                            </div>
+                          </div>
+
+                    </div>
+                  </div>
+
                 </div> <!-- end ng repeat -->
             </div>
         </ion-scroll>
