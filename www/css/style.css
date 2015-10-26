@@ -134,7 +134,10 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     text-decoration: none;
     padding:2px 5px;
 }
-.chunk{
+
+/* new chunk classes */
+
+/*.chunk{
     width:290px;
     max-width:290px;
     position: absolute;
@@ -143,61 +146,55 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-    /*-webkit-transform: scale(1);
-        -ms-transform: scale(1);
-            transform: scale(1);*/
     -webkit-transform-origin: center left;
     -ms-transform-origin: center left;
         transform-origin: center left;
-    -webkit-transition: all 0.15s linear;
-    -moz-transition: all 0.15s linear;
-    transition: all 0.15s linear;
-}
-.chunk.ng-leave.ng-leave-active,
+    -webkit-transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+}*/
+
+/*.chunk.ng-leave.ng-leave-active,
 .chunk.ng-enter {
     opacity: 0;
-    /*width: 0;*/
 }
 .chunk.ng-leave,
 .chunk.ng-enter.ng-enter-active {
     opacity: 1;
-    /*width: 360px;*/
-}
+}*/
 
-.chunk.ng-move{
+/*.chunk.ng-move{
   z-index: 1;
+}*/
+
+.chunk-container{
+  width:290px;
+  position: absolute;
+  height:100%;
+  -webkit-transition: transform 0.2s linear;
+  -moz-transition: transform 0.2s linear;
+  transition: transform 0.2s linear;
+  opacity: 1;
 }
 
-.chunk-duration{
-    float:left;
-    margin:10px 0 0 10px;
+.chunk-container.ng-leave.ng-leave-active,
+.chunk-container.ng-enter {
+    opacity: 0;
 }
 
-.chunk-title{
-    font-size: 0.9em;
-    text-transform: uppercase;
-}
-
-.chunk-time{
-  padding-top: 0px;
-  padding-bottom: 0px;
-  font-size: 0.7em;
-  line-height: 8px;
-}
-
-.chunk-meta{
-    font-size:.8em;
-    position:absolute;
-    bottom:0;
-    left:0;
-    background-color:rgba(0,0,0,0.6);
-    padding:10px;
-}
-.chunk-remove{
-    float:right;
-    margin:0px 10px 0 0;
-    font-size:2em;
-    line-height:40px;
+.chunk{
+  width: 100%;
+  height: 100%;
+  -webkit-transform-origin: center left;
+  -ms-transform-origin: center left;
+      transform-origin: center left;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-transition: transform 0.2s linear;
+  -moz-transition: transform 0.2s linear;
+  transition: transform 0.2s linear;
+  z-index: 1;
 }
 
 .selected-chunk{
@@ -211,104 +208,20 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
         transform: translate3d(87px, 0, 0);
 }
 
-.blurred-chunk{
-    /*-webkit-filter: blur(5px);
-    opacity: 0.6;*/
-}
-.chunk-scroll {
-    overflow: visible !important;
-    margin: 30px 0px;
-}
-.play{
-   font-size:25px;
-}
-.timeline-cont{
-    width:100%;
-    height:45px;
-    margin-top:10px;
-  padding: 0 20px;
-  clear: both;
-}
-.play-button{
-    text-align: center;
-    width: 35px;
-    height: 35px;
-    padding: 2px;
-    padding-left: 6px;
-    border: 2px solid white;
-    border-radius: 100%;
-    line-height: 28px;
-    margin: -5px auto 0px auto;
-}
-
-.timeline{
-    height:100%;
-    width:calc(100% - 40px);
-
-}
-.timeline-line{
-    width: 100%;
-    height: 1px;
-    border-top: 1px solid white;
-    margin: 22px auto 0 auto;
-}
-.timeline-base{
-    width:calc(100%);
-    margin:0 auto;
-    height:100%;
-    position:relative;
-    overflow:hidden;
-}
-.timeline-chunk{
-    height:45px;
-    border-radius: 2px;
-    margin-top:calc(22px - 3px);
-    float:left;
-    padding:0 3px;
-    border:none;
-    -webkit-transition: all 0.15s linear;
-    -moz-transition: all 0.15s linear;
-}
-.timeline-chunk span{
-    width:100%;
-    height:6px;
-    background-color:#666;
-    display: block;
-    border-radius: 4px;
-}
-.timeline-chunk.ng-leave.ng-leave-active,
-.timeline-chunk.ng-enter {
-    width: 0;
-    opacity:0
-}
-.timeline-chunk.ng-leave,
-.timeline-chunk.ng-enter.ng-enter-active {
-    width: 640px;
-    opacity:1;
-}
-.timeline-chunk span.selected{
-    background-color:#fff;
-}
-.timeline-chunks{
-    position:absolute;
-    width:100%;
-    top:0;
-    height:100%;
-}
 .chunk-control{
     height:100%;
-    background-color:rgba(0,0,0,0.2);
     width:100%;
-    -webkit-transition: all 0.15s linear;
-    -moz-transition: all 0.15s linear;
+    background-color:rgba(0,0,0,0.0);
     display: flex;
     flex-direction: row;
     align-content: space-around;
     flex-wrap: wrap;
+    /*-webkit-transition: background-color 0.2s linear;
+    -moz-transition: background-color 0.2s linear;*/
 }
 
 
-.chunk-control-unselected{
+.chunk-control-selected{
   background-color:rgba(0,0,0,0.5);
 }
 
@@ -377,6 +290,126 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     height:100px;
 
 }*/
+
+.chunk-duration{
+    float:left;
+    margin:10px 0 0 10px;
+}
+
+.chunk-title{
+    font-size: 0.9em;
+    text-transform: uppercase;
+}
+
+.chunk-time{
+  padding-top: 0px;
+  padding-bottom: 0px;
+  font-size: 0.7em;
+  line-height: 8px;
+}
+
+.chunk-meta{
+    font-size:.8em;
+    position:absolute;
+    bottom:0;
+    left:0;
+    background-color:rgba(0,0,0,0.6);
+    padding:10px;
+}
+.chunk-remove{
+    float:right;
+    margin:0px 10px 0 0;
+    font-size:2em;
+    line-height:40px;
+}
+
+
+
+.blurred-chunk{
+    /*-webkit-filter: blur(5px);
+    opacity: 0.6;*/
+}
+.chunk-scroll {
+    overflow: visible !important;
+    margin: 30px 0px;
+}
+.play{
+   font-size:25px;
+}
+.timeline-cont{
+    width:100%;
+    height:45px;
+    margin-top:10px;
+  padding: 0 20px;
+  clear: both;
+}
+.play-button{
+    text-align: center;
+    width: 35px;
+    height: 35px;
+    padding: 2px;
+    padding-left: 6px;
+    border: 2px solid white;
+    border-radius: 100%;
+    line-height: 28px;
+    margin: -5px auto 0px auto;
+}
+
+.timeline{
+    height:100%;
+    width:calc(100% - 40px);
+
+}
+.timeline-line{
+    width: 100%;
+    height: 1px;
+    border-top: 1px solid white;
+    margin: 22px auto 0 auto;
+}
+.timeline-base{
+    width:calc(100%);
+    margin:0 auto;
+    height:100%;
+    position:relative;
+    overflow:hidden;
+}
+.timeline-chunk{
+    height:45px;
+    border-radius: 2px;
+    margin-top:calc(22px - 3px);
+    float:left;
+    padding:0 3px;
+    border:none;
+    -webkit-transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+}
+.timeline-chunk span{
+    width:100%;
+    height:6px;
+    background-color:#666;
+    display: block;
+    border-radius: 4px;
+}
+.timeline-chunk.ng-leave.ng-leave-active,
+.timeline-chunk.ng-enter {
+    width: 0;
+    opacity:0
+}
+.timeline-chunk.ng-leave,
+.timeline-chunk.ng-enter.ng-enter-active {
+    width: 640px;
+    opacity:1;
+}
+.timeline-chunk span.selected{
+    background-color:#fff;
+}
+.timeline-chunks{
+    position:absolute;
+    width:100%;
+    top:0;
+    height:100%;
+}
+
 .help-3-ar, .help-3-txt, .help-limit{
     width:100%;
     text-align:center;
