@@ -48,7 +48,7 @@ $ionicConfigProvider.views.swipeBackEnabled(false);
         templateUrl: 'views/play.html',
         controller: 'PlayCtrl'
     })
-    IdleProvider.idle(10);
+    IdleProvider.idle(60);
 })
 
 .run(function($ionicPlatform, $rootScope,socket,Idle) {
