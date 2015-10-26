@@ -50,13 +50,13 @@ app.controller('PlayCtrl', function($scope,$rootScope,$state,socket,$timeout,pla
     }
 
 
-  $scope.$on('IdleStart', function() {
+ /* $scope.$on('IdleStart', function() {
     $ionicHistory.clearCache()
     $state.go('create', {}, {reload: true, inherit: true, notify: true});
     //Idle.setIdle(60);
   });
 
-
+*/
 
     $scope.reset = function() {
       socket.emit('changeView',{view:"create",reload:true});
