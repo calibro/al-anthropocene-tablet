@@ -59,7 +59,7 @@ $ionicConfigProvider.views.swipeBackEnabled(false);
     //   cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
     // }
     if(window.StatusBar) {
-      StatusBar.styleDefault();
+      StatusBar.hide();
     }
   });
 })
