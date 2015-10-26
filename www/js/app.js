@@ -45,6 +45,7 @@ $ionicConfigProvider.views.swipeBackEnabled(false);
     });
     $stateProvider.state('play', {
         url: '/play',
+        cache:false,
         templateUrl: 'views/play.html',
         controller: 'PlayCtrl'
     })
