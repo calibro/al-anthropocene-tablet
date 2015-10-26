@@ -41,7 +41,7 @@
                 <div class="help-3-ar"><i class="ion-android-arrow-up"></i></div>
                 <div class="help-3-txt">Select a maximum of 3 topics among themes, speakers or places to create a new video</div>
             </div>
-            <div class="chunk-pane">
+            <div class="chunk-pane" ng-style="{'min-width':((chunks.length*295)+87)+'px'}">
 <!-- on-tap="deselectChunk(c.id, $index)"
                   ion-stop-event="tap"
 ng-class="{'selected-chunk': selectedChunk==c.id}"
