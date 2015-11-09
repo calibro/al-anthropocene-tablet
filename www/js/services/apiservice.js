@@ -1,6 +1,7 @@
 
 app.factory('apiService', function ($q, $http) {
-    var baseurl = 'http://dicto-ao.herokuapp.com/api/'
+    //var baseurl = 'http://dicto-ao.herokuapp.com/api/'
+    var baseurl = 'http://localhost:9000/api/'
         return {
             getEntities : function() {
                 var deferred = $q.defer();
