@@ -1,0 +1,52 @@
+<div class="main-prev">
+
+
+
+    <div class="prev-content">
+
+        <!-- <videogular  vg-width="controller.config.width" vg-height="controller.config.height" vg-auto-play="true" vg-player-ready="controller.onPlayerReady($API)" vg-complete="controller.onCompleteVideo()" vg-theme="controller.config.theme.url">
+
+            <vg-media vg-src="controller.config.sources">
+            </vg-media>
+
+
+
+        </videogular> -->
+
+        <div style="width:640px;height:480px;float:right;margin-right:10%;margin-top:5%;">
+          <img ng-src="{{getThumb(chunk)}}">
+        </div>
+
+        <ion-scroll direction="y" class="prev-txt">
+            <div>
+            {{chunk.content}}
+            </div>
+        </ion-scroll>
+
+
+    </div>
+
+    <div class="prev-meta">
+       <div on-tap="goBack()" class="prev-close"><i  class="ion-close"></i></div>
+        <div ng-repeat="s in chunk.speakers" class="prev-head">
+            <div class="prev-title">{{s.name.split(",")[0]}}</div>
+            <div class="prev-sub">{{s.name.split(",",2)[1]}}</div>
+        </div>
+        <div class="prev-ntts">
+            <div ng-show="chunk.themes.length" class="prev-thms">
+                <div>
+                    THEMES
+                </div>
+                <span ng-repeat="n in chunk.themes" class="prev-ntt">{{n.name}}{{$last ? '' : ' &middot; '}}</span>
+            </div>
+
+            <div ng-show="chunk.places.length" class="prev-plcs">
+                <div>
+                    PLACES
+                </div>
+                <span ng-repeat="n in chunk.places" class="prev-ntt">{{n.name}}{{$last ? '' : ' &middot; '}}</span>
+            </div>
+        </div>
+    </div>
+
+</div>

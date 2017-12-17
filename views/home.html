@@ -1,0 +1,35 @@
+    <ion-view title="Home">
+        <ion-content padding="true">
+            <div class="welcome">
+              <h1>Welcome!</h1>
+              <p>
+                This is an online prototype of an interactive installation exhibited at <b>ZKM</b> during the
+                <b>GLOBALE: Exo-Evolution</b> exhibition.
+              </p>
+              <p>
+                Since the installation wasn't concieved for an online experience, errors or crashes may occur.
+              </p>
+              <p>
+                We <b>strongly</b> suggest to use <b>Chrome</b> or <b>Safari browser</b>
+              </p>
+              <p>
+                For a better experience browse this site from a tablet.
+                We <b>strongly</b> suggest to use a modern <b>iPad</b>
+              </p>
+            </div>
+            <div class="join">
+              <h3>
+                <a ng-href="http://localhost:9001/#/network?room={{room}}" target="_blank">
+                  http://localhost:9001/#/network?room={{room}}
+                </a>
+              </h3>
+              <p>
+                Open the link above on another tab (or device), for a better experience browse it from a desktop.
+              </p>
+              <p>
+                Click the button below to launch the application
+              </p>
+            </div>
+            <div on-tap="go('create')" class="start-tab-web"><span>GO</span></div>
+        </ion-content>
+    </ion-view>

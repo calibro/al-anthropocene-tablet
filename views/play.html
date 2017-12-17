@@ -1,0 +1,68 @@
+<div class="play-cont">
+<div class="play-meta">
+    <div ng-repeat="s in currchunk.speakers" class="play-title">
+        {{s.name.split(',')[0]}}
+      <div class="play-sub">
+        {{s.name.split(',',2)[1]}}
+      </div>
+    </div>
+
+
+    <div class="play-ntts">
+        <div ng-show="currchunk.themes.length" class="play-thms">
+            <div>
+                THEMES
+            </div>
+            <span ng-repeat="n in currchunk.themes" class="play-ntt">{{n.name}}{{$last ? '' : ' &middot; '}}</span>
+        </div>
+
+        <div ng-show="currchunk.places.length" class="play-plcs">
+            <div>
+                PLACES
+            </div>
+            <span ng-repeat="n in currchunk.places" class="play-ntt">{{n.name}}{{$last ? '' : ' &middot; '}}</span>
+        </div>
+    </div>
+
+</div>
+
+<ion-scroll direction="y" class="play-txt" delegate-handle="play">
+    <div>
+        {{currchunk.content}}
+    </div>
+</ion-scroll>
+
+<timeline></timeline>
+
+<div class="bottom-menu" ng-show="chunks.length">
+
+  <div on-tap="go('create')" class="ent-leftmenu">
+      <div >edit video</div>
+      <!--<div ng-click="goBack()">back</div>-->
+  </div>
+
+
+  <div ng-click="reset()" class="ent-rightmenu">
+      <div >create new video</div>
+      <!--<div ng-click="goBack()">back</div>-->
+  </div>
+
+
+  <div class="play-ctrls">
+
+    <div on-tap="prev()" class="play-prev">
+      <i class="ion-ios-skipbackward"></i>
+    </div>
+
+
+  <div on-tap="playOrPause()" class="play-go">
+    <i ng-class="{'ion-ios-play': !play, 'ion-ios-pause':play}" ></i>
+  </div>
+
+    <div on-tap="next()" class="play-next">
+      <i class="ion-ios-skipforward"></i>
+    </div>
+
+  </div>
+</div>
+</div>
