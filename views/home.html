@@ -1,7 +1,7 @@
     <ion-view title="Home">
         <ion-content padding="true">
             <div class="welcome">
-              <h1>Welcome!</h1>
+              <h1>Welcome.</h1>
               <p>
                 This is an online prototype of an interactive installation exhibited at <b>ZKM</b> during the
                 <b>GLOBALE: Exo-Evolution</b> exhibition.
@@ -19,16 +19,19 @@
             </div>
             <div class="join">
               <h3>
-                <a ng-href="http://calib.ro/al-anthropocene-web/#/network?room={{room}}" target="_blank">
-                  http://calib.ro/al-anthropocene-web/#/network?room={{room}}
-                </a>
+                Instruction
               </h3>
-              <p>
-                Open the link above on another tab (or device), for a better experience browse it from a desktop.
-              </p>
-              <p>
-                Click the button below to launch the application
-              </p>
+              <ol>
+                <li>
+                  Open the following link on another tab (or device), for a better experience browse it from a desktop.<br />
+                  <a ng-href="http://calib.ro/al-anthropocene-web/#/network?room={{room}}" target="_blank">
+                    http://calib.ro/al-anthropocene-web/#/network?room={{room}}
+                  </a>
+                </li>
+                <li>
+                  Click the button below to launch the application
+                </li>
+              </ol>
             </div>
             <div on-tap="go('create')" class="start-tab-web"><span>GO</span></div>
         </ion-content>
